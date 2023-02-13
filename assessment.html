@@ -117,6 +117,23 @@
     text-align: center;
     font-family: "Times New Roman", Times, serif;
   }
+
+  .bg {
+    background-image: url("https://c0.wallpaperflare.com/preview/184/811/591/blur-bread-rolls-counter-cup.jpg");
+  }
+
+  .bg2 {
+    background-color: #f2fffb
+  }
+
+  .bg3 {
+    background-color: #ffebf3
+  }
+
+  .bg4 {
+    background-color: #ffe1ed
+  }
+
 </style>
 
 <body class="sb-nav-fixed">
@@ -157,8 +174,8 @@
             </a>
             <div class="sb-sidenav-menu-heading">Restaurant List</div>
             <a class="nav-link" href="restaurant_list.html">
-                <div class="sb-nav-link-icon"><i class="far fa-address-book"></i></div>
-                รายชื่อร้านอาหาร
+              <div class="sb-nav-link-icon"><i class="far fa-address-book"></i></div>
+              รายชื่อร้านอาหาร
             </a>
           </div>
         </div>
@@ -168,449 +185,434 @@
         </div>
       </nav>
     </div>
-    <div id="layoutSidenav_content">
-
+    <div class="bg" id="layoutSidenav_content">
 
       <form method="POST" id="regForm" action="http://localhost:3000">
-        <h2 class="head">
-          <font color="#7200D6">Online Restaurant Assessment System</font> for <font color="#D68C00">Chopradu Food
-            Center</font>
-        </h2>
-        <hr>
-        <br>
-        <!-- One "tab" for each step in the form: -->
-        <div class="tab">
-          <font color="#D60000">Question Info:</font>
-          <h4 style="text-align: center;">Online Restaurant Assessment System for Chopradu Food Center</h4>
-          <br>
-          <p>ด้วยแพลตฟอร์มนี้ จะทำให้ลูกค้าสามารถประเมินร้านอาหารที่ตนเองใช้บริการได้ ซึ่ง
-            มีวัตถุประสงค์เพื่อเก็บรวบรวมข้อมูลที่ได้จากการประเมิน
-            ที่จะนำข้อมูลที่ได้รับไปใช้ในการวิเคราะห์ข้อมูลเพื่อหาแนวทางในการ
-            แก้ปัญหาและปรับปรุงการบริการศูนย์อาหารช่อประดู่ ให้เป็นไปตามมาตรฐาน
-          </p>
-        </div>
+        <div class="col-lg-12">
+          <div class="bg2" class="card mb-4">
+            <div class="bg3" class="card-header" class="fas fa-chart-bar me-1"></i>
+              Wu-Assessment
+            </div>
+            <div class="card-body">
+              <h2 class="bg4" class="head">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/th/thumb/e/ed/Walailak_University_Logo.svg/1200px-Walailak_University_Logo.svg.png"
+                  width="150">
+                <font color="#7200D6">ระบบประเมินร้านอาหารออนไลน์</font> ณ <font color="#D68C00">ศูนย์อาหารช่อประดู่
+                </font>
+              </h2>
+              <hr>
 
-        <div class="tab">
-          <font color="#D60000">Question Info:</font>
-          <br>
-          <br>
-          <br>
-          <h4 style="text-align: center;"">มีทั้งหมด 10 คำถาม</h2>
+
+              <!-- One "tab" for each step in the form: -->
+              <div class="tab">
+                <font color="#D60000">Question Info:</font>
+                <h4 style="text-align: center;">Online Restaurant Assessment System for Chopradu Food Center</h4>
+                <br>
+                <p>ด้วยแพลตฟอร์มนี้ จะทำให้ลูกค้าสามารถประเมินร้านอาหารที่ตนเองใช้บริการได้ ซึ่ง
+                  มีวัตถุประสงค์เพื่อเก็บรวบรวมข้อมูลที่ได้จากการประเมิน
+                  ที่จะนำข้อมูลที่ได้รับไปใช้ในการวิเคราะห์ข้อมูลเพื่อหาแนวทางในการ
+                  แก้ปัญหาและปรับปรุงการบริการศูนย์อาหารช่อประดู่ ให้เป็นไปตามมาตรฐาน
+                </p>
+              </div>
+
+              <div class="tab">
+                <font color="#D60000">Question Info:</font>
+                <br>
+                <br>
+                <br>
+                <h4 style="text-align: center;"">เลือกร้านอาหาร</h2>
         </div>
 
         <div class=" tab">
-            <font size="4">ชื่อ (ชื่อเล่นได้) :</font>
-            <br>
-            <br>
-            <p><input placeholder="Name..." id="id_name" name="id_name" type="text"></p>
-        </div>
+                  <font color="#D60000">Question Info:</font>
+                  <font size="4">ร้านอาหาร:</font>
+                  <br>
+                  <br>
+                  <select class="form-select" id="id_restaurant" name="id_restaurant" aria-label="Default select example">
+                    <option selected></option>
+                    <option value="ชายสี่หมี่เกี๊ยว">ชายสี่หมี่เกี๊ยว</option>
+                    <option value="สิทธิวงศ์ ผลไม้">สิทธิวงศ์ ผลไม้</option>
+                    <option value="ร้านป้าละม่อม">ร้านป้าละม่อม</option>
+                    <option value="ก๋วยเตี๋ยวเรือบัณฑิต">ก๋วยเตี๋ยวเรือบัณฑิต</option>
+                    <option value="ยินดี">ยินดี</option>
+                    <option value="ร้านอัสมา">ร้านอัสมา</option>
+                    <option value="ก๊ะฮะ">ก๊ะฮะ</option>
+                    <option value="ร้านชา 8">ร้านชา 8</option>
+                    <option value="เครื่องดื่มเดิม">เครื่องดื่มเดิม</option>
+                    <option value="ลูกชิ้นนิตติยา">ลูกชิ้นนิตติยา</option>
+                    <option value="น้องมายด์ เครื่องดื่ม">น้องมายด์ เครื่องดื่ม</option>
+                    <option value="ลูกชุบขนมหวาน">ลูกชุบขนมหวาน</option>
+                    <option value="ฮูดียา">ฮูดียา</option>
+                  </select>
+                  <br>
+              </div>
 
-        <div class="tab">
-          <font size="4">อายุ:</font>
-          <br>
-          <br>
-          <select class="form-select" id="id_old" name="id_old" aria-label="Default select example">
-            <option selected>Open this select menu</option>
-            <option selected="" value=""></option>
-            <option value="Under 18">Under 18</option>
-            <option value="18">18</option>
-            <option value="19">19</option>
-            <option value="20">20</option>
-            <option value="21">21</option>
-            <option value="22">22</option>
-            <option value="23">23</option>
-            <option value="24">24</option>
-            <option value="25">25</option>
-            <option value="26">26</option>
-            <option value="27">27</option>
-            <option value="28">28</option>
-            <option value="29">29</option>
-            <option value="30 or olde">30 or olde</option>
-          </select>
-          <br>
-        </div>
+              <div class="tab">
+                <font color="#D60000">Question Info:</font>
+                <font size="4">ประเภทร้านอาหาร:</font>
+                <br>
+                <br>
+                <select class="form-select" id="id_type" name="id_type" aria-label="Default select example">
+                  <option selected></option>
+                  <option value="a_la_carte">อาหารตามสั่ง</option>
+                  <option value="curry_rice">ข้าวราดแกง</option>
+                  <option value="noodles">ก๋วยเตี๋ยว</option>
+                  <option value="drink">เครื่องดื่ม</option>
+                  <option value="appetizers">อาหารทานเล่น</option>
+                </select>
+                <br>
+              </div>
 
-        <div class="tab">
-          <font size="4">ร้านอาหาร:</font>
-          <br>
-          <br>
-          <select class="form-select" id="id_restaurant" name="id_restaurant" aria-label="Default select example">
-            <option selected>Open this select menu</option>
-            <option selected="" value=""></option>
-            <option value="ชายสี่หมี่เกี๊ยว">ชายสี่หมี่เกี๊ยว</option>
-            <option value="สิทธิวงศ์ ผลไม้">สิทธิวงศ์ ผลไม้</option>
-            <option value="ร้านป้าละม่อม">ร้านป้าละม่อม</option>
-            <option value="ก๋วยเตี๋ยวเรือบัณฑิต">ก๋วยเตี๋ยวเรือบัณฑิต</option>
-            <option value="ยินดี">ยินดี</option>
-            <option value="ร้านอัสมา">ร้านอัสมา</option>
-            <option value="ก๊ะฮะ">ก๊ะฮะ</option>
-            <option value="ร้านชา 8">ร้านชา 8</option>
-            <option value="เครื่องดื่มเดิม">เครื่องดื่มเดิม</option>
-            <option value="ลูกชิ้นนิตติยา">ลูกชิ้นนิตติยา</option>
-            <option value="น้องมายด์ เครื่องดื่ม">น้องมายด์ เครื่องดื่ม</option>
-            <option value="ลูกชุบขนมหวาน">ลูกชุบขนมหวาน</option>
-            <option value="ฮูดียา">ฮูดียา</option>
-          </select>
-          <br>
-        </div>
+              <br>
+              <div class="tab">
+                <font color="#D60000">Question Info:</font>
+                <br>
+                <br>
+                <br>
+                <h4 style="text-align: center;"">มีทั้งหมด 6 คำถาม</h2>
+            <h4 style=" text-align: center;"">กด Next เพื่อประเมิน</h2>
+              </div>
 
-        <div class="tab">
-          <font size="4">ประเภทร้านอาหาร:</font>
-          <br>
-          <br>
-          <select class="form-select" id="id_type" name="id_type" aria-label="Default select example">
-            <option selected>Open this select menu</option>
-            <option selected="" value=""></option>
-            <option value="a_la_carte">อาหารตามสั่ง</option>
-            <option value="curry_rice">ข้าวราดแกง</option>
-            <option value="noodles">ก๋วยเตี๋ยว</option>
-            <option value="drink">เครื่องดื่ม</option>
-            <option value="appetizers">อาหารทานเล่น</option>
-          </select>
-          <br>
-        </div>
+              <!-- id 1 -->
+              <div class="tab" id="id_quality">
+                <font color="#D60000">Question Info:</font>
+                <font size="4">คุณภาพอาหาร:</font>
+                <br>
+                <br>
+                <div class="form-check">
+                  <div><i class="fas far fa-thumbs-up"></i>
+                    <input class="form-check-input" type="radio" name="id_quality" id="id_quality" value="5">
+                    <label class="form-check-label" for="id_quality">
+                      ยอดเยี่ยม
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check">
+                  <div><i class="fas 	far fa-smile"></i>
+                    <input class="form-check-input" type="radio" name="id_quality" id="id_quality" value="4">
+                    <label class="form-check-label" for="id_quality">
+                      ดี
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check">
+                  <div><i class="fas 	far fa-meh"></i>
+                    <input class="form-check-input" type="radio" name="id_quality" id="id_quality" value="3">
+              <label class=" form-check-label" for="id_quality">
+                    ปานกลาง
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check">
+                  <div><i class="fas 	far fa-frown"></i>
+                    <input class="form-check-input" type="radio" name="id_quality" id="id_quality" value="2">
+                    <label class="form-check-label" for="id_quality">
+                      พอใช้
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check">
+                  <div><i class="fas	far fa-thumbs-down"></i>
+                    <input class="form-check-input" type="radio" name="id_quality" id="id_quality" value="1">
+                    <label class="form-check-label" for="id_quality">
+                      ปรับปรุง
+                    </label>
+                  </div>
+                </div>
+              </div>
 
-        <br>
-        <br>
-        <br>
-        <div class="tab">
-          <center>
-            <h3>
-              <font color="#ff00ae"> กด Next เพื่อเริ่มตอบคำถาม </font>
-            </h3>
-          </center>
-        </div>
-
-        <!-- id 1 -->
-        <div class="tab" id="id_quality">
-          <font size="4">คุณภาพอาหาร:</font>
-          <br>
-          <br>
-          <div class="form-check">
-            <div><i class="fas far fa-thumbs-up"></i>
-              <input class="form-check-input" type="radio" name="id_quality" id="id_quality" value="excellent">
-              <label class="form-check-label" for="id_quality">
-                ยอดเยี่ยม
-              </label>
-            </div>
-          </div>
-          <div class="form-check">
-            <div><i class="fas 	far fa-smile"></i>
-              <input class="form-check-input" type="radio" name="id_quality" id="id_quality" value="good">
-              <label class="form-check-label" for="id_quality">
-                ดี
-              </label>
-            </div>
-          </div>
-          <div class="form-check">
-            <div><i class="fas 	far fa-meh"></i>
-              <input class="form-check-input" type="radio" name="id_quality" id="id_quality" value="moderate">
-              <label class="form-check-label" for="id_quality">
-                ปานกลาง
-              </label>
-            </div>
-          </div>
-          <div class="form-check">
-            <div><i class="fas 	far fa-frown"></i>
-              <input class="form-check-input" type="radio" name="id_quality" id="id_quality" value="fair">
-              <label class="form-check-label" for="id_quality">
-                พอใช้
-              </label>
-            </div>
-          </div>
-          <div class="form-check">
-            <div><i class="fas	far fa-thumbs-down"></i>
-              <input class="form-check-input" type="radio" name="id_quality" id="id_quality" value="amend">
-              <label class="form-check-label" for="id_quality">
-                ปรับปรุง
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <!-- id 2 -->
-        <div class="tab" id="id_price">
-          <font size="4">ด้านราคา:</font>
-          <br>
-          <br>
-          <div class="form-check">
-            <div><i class="fas far fa-thumbs-up"></i>
-              <input class="form-check-input" type="radio" name="id_price" id="id_price" value="excellent >
+              <!-- id 2 -->
+              <div class="tab" id="id_price">
+                <font color="#D60000">Question Info:</font>
+                <font size="4">ด้านราคา:</font>
+                <br>
+                <br>
+                <div class="form-check">
+                  <div><i class="fas far fa-thumbs-up"></i>
+                    <input class="form-check-input" type="radio" name="id_price" id="id_price" value="5">
               <label class=" form-check-label" for="id_price">
-              ยอดเยี่ยม
-              </label>
-            </div>
-          </div>
-          <div class="form-check">
-            <div><i class="fas 	far fa-smile"></i>
-              <input class="form-check-input" type="radio" name="id_price" id="id_price" value="good">
-              <label class="form-check-label" for="id_price">
-                ดี
-              </label>
-            </div>
-          </div>
-          <div class="form-check">
-            <div><i class="fas 	far fa-meh"></i>
-              <input class="form-check-input" type="radio" name="id_price" id="id_price" value="moderate">
-              <label class="form-check-label" for="id_price">
-                ปานกลาง
-              </label>
-            </div>
-          </div>
-          <div class="form-check">
-            <div><i class="fas 	far fa-frown"></i>
-              <input class="form-check-input" type="radio" name="id_price" id="id_price" value="fair">
-              <label class="form-check-label" for="id_price">
-                พอใช้
-              </label>
-            </div>
-          </div>
-          <div class="form-check">
-            <div><i class="fas	far fa-thumbs-down"></i>
-              <input class="form-check-input" type="radio" name="id_price" id="id_price" value="amend">
-              <label class="form-check-label" for="id_price">
-                ปรับปรุง
-              </label>
-            </div>
-          </div>
-        </div>
+                    ยอดเยี่ยม
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check">
+                  <div><i class="fas 	far fa-smile"></i>
+                    <input class="form-check-input" type="radio" name="id_price" id="id_price" value="4">
+                    <label class="form-check-label" for="id_price">
+                      ดี
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check">
+                  <div><i class="fas 	far fa-meh"></i>
+                    <input class="form-check-input" type="radio" name="id_price" id="id_price" value="3">
+              <label class=" form-check-label" for="id_price">
+                    ปานกลาง
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check">
+                  <div><i class="fas 	far fa-frown"></i>
+                    <input class="form-check-input" type="radio" name="id_price" id="id_price" value="2">
+                    <label class="form-check-label" for="id_price">
+                      พอใช้
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check">
+                  <div><i class="fas	far fa-thumbs-down"></i>
+                    <input class="form-check-input" type="radio" name="id_price" id="id_price" value="1">
+                    <label class="form-check-label" for="id_price">
+                      ปรับปรุง
+                    </label>
+                  </div>
+                </div>
+              </div>
 
-        <!-- id 3 -->
-        <div class="tab" id="id_serve">
-          <font size="4">ด้านการบริการ:</font>
-          <br>
-          <br>
-          <div class="form-check">
-            <div><i class="fas	far fa-thumbs-up"></i>
-              <input class="form-check-input" type="radio" name="id_serve" id="id_serve" value="excellent">
-              <label class="form-check-label" for="id_serve">
-                ยอดเยี่ยม
-              </label>
-            </div>
-          </div>
-          <div class="form-check">
-            <div><i class="fas 	far fa-smile"></i>
-              <input class="form-check-input" type="radio" name="id_serve" id="id_serve" value="good">
-              <label class="form-check-label" for="id_serve">
-                ดี
-              </label>
-            </div>
-          </div>
-          <div class="form-check">
-            <div><i class="fas 	far fa-meh"></i>
-              <input class="form-check-input" type="radio" name="id_serve" id="id_serve" value="moderate">
-              <label class="form-check-label" for="id_serve">
-                ปานกลาง
-              </label>
-            </div>
-          </div>
-          <div class="form-check">
-            <div><i class="fas 	far fa-frown"></i>
-              <input class="form-check-input" type="radio" name="id_serve" id="id_serve" value="fair">
-              <label class="form-check-label" for="id_serve">
-                พอใช้
-              </label>
-            </div>
-          </div>
-          <div class="form-check">
-            <div><i class="fas	far fa-thumbs-down"></i>
-              <input class="form-check-input" type="radio" name="id_serve" id="id_serve" value="amend">
-              <label class="form-check-label" for="id_serve">
-                ปรับปรุง
-              </label>
-            </div>
-          </div>
-        </div>
+              <!-- id 3 -->
+              <div class="tab" id="id_serve">
+                <font color="#D60000">Question Info:</font>
+                <font size="4">ด้านการบริการ:</font>
+                <br>
+                <br>
+                <div class="form-check">
+                  <div><i class="fas	far fa-thumbs-up"></i>
+                    <input class="form-check-input" type="radio" name="id_serve" id="id_serve" value="5">
+                    <label class="form-check-label" for="id_serve">
+                      ยอดเยี่ยม
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check">
+                  <div><i class="fas 	far fa-smile"></i>
+                    <input class="form-check-input" type="radio" name="id_serve" id="id_serve" value="4">
+                    <label class="form-check-label" for="id_serve">
+                      ดี
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check">
+                  <div><i class="fas 	far fa-meh"></i>
+                    <input class="form-check-input" type="radio" name="id_serve" id="id_serve" value="3">
+                    <label class="form-check-label" for="id_serve">
+                      ปานกลาง
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check">
+                  <div><i class="fas 	far fa-frown"></i>
+                    <input class="form-check-input" type="radio" name="id_serve" id="id_serve" value="2">
+                    <label class="form-check-label" for="id_serve">
+                      พอใช้
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check">
+                  <div><i class="fas	far fa-thumbs-down"></i>
+                    <input class="form-check-input" type="radio" name="id_serve" id="id_serve" value="1">
+                    <label class="form-check-label" for="id_serve">
+                      ปรับปรุง
+                    </label>
+                  </div>
+                </div>
+              </div>
 
-        <!-- id 4 -->
-        <div class="tab" id="id_dress">
-          <font size="4">ด้านการแต่งกาย:</font>
-          <br>
-          <br>
-          <div class="form-check">
-            <div><i class="fas 	far fa-thumbs-up"></i>
-              <input class="form-check-input" type="radio" name="id_dress" id="id_dress" value="excellent">
-              <label class="form-check-label" for="id_dress">
-                ยอดเยี่ยม
-              </label>
-            </div>
-          </div>
-          <div class="form-check">
-            <div><i class="fas 	far fa-smile"></i>
-              <input class="form-check-input" type="radio" name="id_dress" id="id_dress" value="good">
-              <label class="form-check-label" for="id_dress">
-                ดี
-              </label>
-            </div>
-          </div>
-          <div class="form-check">
-            <div><i class="fas 	far fa-meh"></i>
-              <input class="form-check-input" type="radio" name="id_dress" id="id_dress" value="moderate">
-              <label class="form-check-label" for="id_dress">
-                ปานกลาง
-              </label>
-            </div>
-          </div>
-          <div class="form-check">
-            <div><i class="fas 	far fa-frown"></i>
-              <input class="form-check-input" type="radio" name="id_dress" id="id_dress" value="fair">
-              <label class="form-check-label" for="id_dress">
-                พอใช้
-              </label>
-            </div>
-          </div>
-          <div class="form-check">
-            <div><i class="fas	far fa-thumbs-down"></i>
-              <input class="form-check-input" type="radio" name="id_dress" id="id_dress" value="amend">
-              <label class="form-check-label" for="id_dress">
-                ปรับปรุง
-              </label>
-            </div>
-          </div>
-        </div>
+              <!-- id 4 -->
+              <div class="tab" id="id_dress">
+                <font color="#D60000">Question Info:</font>
+                <font size="4">ด้านการแต่งกาย:</font>
+                <br>
+                <br>
+                <div class="form-check">
+                  <div><i class="fas 	far fa-thumbs-up"></i>
+                    <input class="form-check-input" type="radio" name="id_dress" id="id_dress" value="5">
+                    <label class="form-check-label" for="id_dress">
+                      ยอดเยี่ยม
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check">
+                  <div><i class="fas 	far fa-smile"></i>
+                    <input class="form-check-input" type="radio" name="id_dress" id="id_dress" value="4">
+                    <label class="form-check-label" for="id_dress">
+                      ดี
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check">
+                  <div><i class="fas 	far fa-meh"></i>
+                    <input class="form-check-input" type="radio" name="id_dress" id="id_dress" value="3">
+                    <label class="form-check-label" for="id_dress">
+                      ปานกลาง
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check">
+                  <div><i class="fas 	far fa-frown"></i>
+                    <input class="form-check-input" type="radio" name="id_dress" id="id_dress" value="2">
+                    <label class="form-check-label" for="id_dress">
+                      พอใช้
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check">
+                  <div><i class="fas	far fa-thumbs-down"></i>
+                    <input class="form-check-input" type="radio" name="id_dress" id="id_dress" value="1">
+                    <label class="form-check-label" for="id_dress">
+                      ปรับปรุง
+                    </label>
+                  </div>
+                </div>
+              </div>
 
-        <!-- id 5 -->
-        <div class="tab" id="id_cleanliness">
-          <font size="4">ด้านความสะอาด:</font>
-          <br>
-          <br>
-          <div class="form-check">
-            <div><i class="fas	far fa-thumbs-up"></i>
-              <input class="form-check-input" type="radio" name="id_cleanliness" id="id_cleanliness" value="excellent">
-              <label class="form-check-label" for="id_cleanliness">
-                ยอดเยี่ยม
-              </label>
-            </div>
-          </div>
-          <div class="form-check">
-            <div><i class="fas 	far fa-smile"></i>
-              <input class="form-check-input" type="radio" name="id_cleanliness" id="id_cleanliness" value="good">
-              <label class="form-check-label" for="id_cleanliness">
-                ดี
-              </label>
-            </div>
-          </div>
-          <div class="form-check">
-            <div><i class="fas	far fa-meh"></i>
-              <input class="form-check-input" type="radio" name="id_cleanliness" id="id_cleanliness" value="moderate">
-              <label class="form-check-label" for="id_cleanliness">
-                ปานกลาง
-              </label>
-            </div>
-          </div>
-          <div class="form-check">
-            <div><i class="fas 	far fa-frown"></i>
-              <input class="form-check-input" type="radio" name="id_cleanliness" id="id_cleanliness" value=fair">
-              <label class="form-check-label" for="id_cleanliness">
-                พอใช้
-              </label>
-            </div>
-          </div>
-          <div class="form-check">
-            <div><i class="fas	far fa-thumbs-down"></i>
-              <input class="form-check-input" type="radio" name="id_cleanliness" id="id_cleanliness" value="amend">
-              <label class="form-check-label" for="id_cleanliness">
-                ปรับปรุง
-              </label>
-            </div>
-          </div>
-        </div>
+              <!-- id 5 -->
+              <div class="tab" id="id_cleanliness">
+                <font color="#D60000">Question Info:</font>
+                <font size="4">ด้านความสะอาด:</font>
+                <br>
+                <br>
+                <div class="form-check">
+                  <div><i class="fas	far fa-thumbs-up"></i>
+                    <input class="form-check-input" type="radio" name="id_cleanliness" id="id_cleanliness" value="5">
+                    <label class="form-check-label" for="id_cleanliness">
+                      ยอดเยี่ยม
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check">
+                  <div><i class="fas 	far fa-smile"></i>
+                    <input class="form-check-input" type="radio" name="id_cleanliness" id="id_cleanliness" value="4">
+                    <label class="form-check-label" for="id_cleanliness">
+                      ดี
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check">
+                  <div><i class="fas	far fa-meh"></i>
+                    <input class="form-check-input" type="radio" name="id_cleanliness" id="id_cleanliness" value="3">
+                    <label class="form-check-label" for="id_cleanliness">
+                      ปานกลาง
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check">
+                  <div><i class="fas 	far fa-frown"></i>
+                    <input class="form-check-input" type="radio" name="id_cleanliness" id="id_cleanliness" value="2">
+                    <label class="form-check-label" for="id_cleanliness">
+                      พอใช้
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check">
+                  <div><i class="fas	far fa-thumbs-down"></i>
+                    <input class="form-check-input" type="radio" name="id_cleanliness" id="id_cleanliness" value="1">
+                    <label class="form-check-label" for="id_cleanliness">
+                      ปรับปรุง
+                    </label>
+                  </div>
+                </div>
+              </div>
 
-        <!-- id 6 -->
-        <div class="tab" id="id_polite">
-          <font size="4">ด้านสุภาพของร้านอาหาร:</font>
-          <br>
-          <br>
-          <div class="form-check">
-            <div><i class="fas 	far fa-thumbs-up"></i>
-              <input class="form-check-input" type="radio" name="id_polite" id="id_polite" value="excellent">
-              <label class="form-check-label" for="id_polite">
-                ยอดเยี่ยม
-              </label>
-            </div>
-          </div>
-          <div class="form-check">
-            <div><i class="fas 	far fa-smile"></i>
-              <input class="form-check-input" type="radio" name="id_polite" id="id_polite" value="good">
-              <label class="form-check-label" for="id_polite">
-                ดี
-              </label>
-            </div>
-          </div>
-          <div class="form-check">
-            <div><i class="fas 	far fa-meh"></i>
-              <input class="form-check-input" type="radio" name="id_polite" id="id_polite" value="moderate">
-              <label class="form-check-label" for="id_polite">
-                ปานกลาง
-              </label>
-            </div>
-          </div>
-          <div class="form-check">
-            <div><i class="fas 	far fa-frown"></i>
-              <input class="form-check-input" type="radio" name="id_polite" id="id_polite" value="fair">
-              <label class="form-check-label" for="id_polite">
-                พอใช้
-              </label>
-            </div>
-          </div>
-          <div class="form-check">
-            <div><i class="fas	far fa-thumbs-down"></i>
-              <input class="form-check-input" type="radio" name="id_polite" id="id_polite" value="amend">
-              <label class="form-check-label" for="id_polite">
-                ปรับปรุง
-              </label>
-            </div>
-          </div>
-        </div>
+              <!-- id 6 -->
+              <div class="tab" id="id_polite">
+                <font color="#D60000">Question Info:</font>
+                <font size="4">ด้านสุภาพของร้านอาหาร:</font>
+                <br>
+                <br>
+                <div class="form-check">
+                  <div><i class="fas 	far fa-thumbs-up"></i>
+                    <input class="form-check-input" type="radio" name="id_polite" id="id_polite" value="5">
+                    <label class="form-check-label" for="id_polite">
+                      ยอดเยี่ยม
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check">
+                  <div><i class="fas 	far fa-smile"></i>
+                    <input class="form-check-input" type="radio" name="id_polite" id="id_polite" value="4">
+                    <label class="form-check-label" for="id_polite">
+                      ดี
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check">
+                  <div><i class="fas 	far fa-meh"></i>
+                    <input class="form-check-input" type="radio" name="id_polite" id="id_polite" value="3">
+                    <label class="form-check-label" for="id_polite">
+                      ปานกลาง
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check">
+                  <div><i class="fas 	far fa-frown"></i>
+                    <input class="form-check-input" type="radio" name="id_polite" id="id_polite" value="2">
+                    <label class="form-check-label" for="id_polite">
+                      พอใช้
+                    </label>
+                  </div>
+                </div>
+                <div class="form-check">
+                  <div><i class="fas	far fa-thumbs-down"></i>
+                    <input class="form-check-input" type="radio" name="id_polite" id="id_polite" value="1">
+                    <label class="form-check-label" for="id_polite">
+                      ปรับปรุง
+                    </label>
+                  </div>
+                </div>
+              </div>
 
-        <div class="tab">
-          <center>
-            <h3>
-              <font color="#00ffae"> THANK!! </font>
-            </h3>
-          </center>
-        </div>
 
-        <div style="overflow:auto;">
-          <div style="float:right;">
-            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-            <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-          </div>
-        </div>
-        <!-- Circles which indicates the steps of the form: -->
-        <div style="text-align:center;margin-top:40px;">
-          <span class="step"></span>
-          <span class="step"></span>
-          <span class="step"></span>
-          <span class="step"></span>
-          <span class="step"></span>
-          <span class="step"></span>
-          <span class="step"></span>
-          <span class="step"></span>
-          <span class="step"></span>
-          <span class="step"></span>
-          <span class="step"></span>
-          <span class="step"></span>
-          <span class="step"></span>
-          <span class="step"></span>
-        </div>
+              <div class="tab">
+                <center>
+                  <h3>
+                    <font color="#00ffae"> THANK!! </font>
+                  </h3>
+                </center>
+              </div>
+
+              <div style="overflow:auto;">
+                <div style="float:right;">
+                  <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                  <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                </div>
+              </div>
+
+              <!-- Circles which indicates the steps of the form: -->
+              <div style="text-align:center;margin-top:40px;">
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+              </div>
       </form>
-
-      <footer class="py-4 bg-light mt-auto">
-        <div class="container-fluid px-4">
-          <div class="d-flex align-items-center justify-content-between small">
-            <div class="text-muted">ศูนย์บริหารทรัพย์สิน มหาวิทยาลัยวลัยลักษณ์
-              <a href="https://am.wu.ac.th/">คลิก</a>
-            </div>
-
-            <div class="text-muted">มหาวิทยาลัยวลัยลักษณ์
-              <a href="https://www.wu.ac.th/th">คลิก</a>
-            </div>
-
-          </div>
-        </div>
-      </footer>
     </div>
+  </div>
+  </div>
+
+  <footer class="py-4 bg-dark mt-auto">
+    <div class="container-fluid px-4">
+      <div class="d-flex align-items-center justify-content-between small">
+        <div class="text-muted">ศูนย์บริหารทรัพย์สิน มหาวิทยาลัยวลัยลักษณ์
+          <a href="https://am.wu.ac.th/">คลิก</a>
+        </div>
+
+        <div class="text-muted">มหาวิทยาลัยวลัยลักษณ์
+          <a href="https://www.wu.ac.th/th">คลิก</a>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+  </div>
   </div>
 
   <script src="no_db.js"></script>
@@ -662,6 +664,7 @@
     if (currentTab >= x.length) {
       // ... แบบฟอร์มได้รับการส่ง:
       document.getElementById("regForm").submit();
+      showSuccessAlert()
       return false;
     }
     // ให้แสดงแท็บที่ถูกต้อง
@@ -699,4 +702,19 @@
     //... เพิ่มคลาส "ใช้งานอยู่" ในขั้นตอนปัจจุบัน:
     x[n].className += " active";
   }
+
+  function showSuccessAlert() {
+    Swal.fire({
+      title: 'สำเร็จ!',
+      text: 'คุณได้สมัครสมาชิกเรียบร้อยแล้ว',
+      icon: 'success',
+      confirmButtonText: 'ตกลง'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "index.html";
+      }
+    })
+}
+
 </script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>

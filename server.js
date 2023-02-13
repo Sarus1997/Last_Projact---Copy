@@ -147,8 +147,6 @@ app.post('/', async (req, res) => {
     const client = new MongoClient(uri);
     await client.connect();
     await client.db('admin').collection('Data').insertOne({
-        "id_name": object.id_name,
-        "id_old": object.id_old,
         "id_restaurant": object.id_restaurant,
         "id_type": object.id_type,
         "id_quality": object.id_quality,
@@ -159,6 +157,17 @@ app.post('/', async (req, res) => {
         "id_polite": object.id_polite,
     });
 
+})
+
+// Read All API
+app.get('/admin2', async (req, res) => {
+    const client = new MongoClient(uri);
+    await client.connect();
+    const objects = await client.db('admin').collection('Data')
+        .find({}).sort({ "Date received": -1 }).toArray();
+
+    await client.close();
+    res.status(200).send(objects);
 })
 
 
