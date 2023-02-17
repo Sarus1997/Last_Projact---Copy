@@ -34,90 +34,7 @@
 
 </head>
 
-<style>
-    * {
-        box-sizing: border-box;
-    }
 
-    body {
-        background-color: #f1f1f1;
-    }
-
-    #regForm {
-        background-color: #ffffff;
-        margin: 100px auto;
-        font-family: Raleway;
-        padding: 40px;
-        width: 70%;
-        min-width: 300px;
-    }
-
-    h1 {
-        text-align: center;
-    }
-
-    input {
-        padding: 10px;
-        width: 100%;
-        font-size: 17px;
-        font-family: Raleway;
-        border: 1px solid #aaaaaa;
-    }
-
-    /* Mark input boxes that gets an error on validation: */
-    input.invalid {
-        background-color: #ffdddd;
-    }
-
-    /* Hide all steps by default: */
-    .tab {
-        display: none;
-    }
-
-    button {
-        background-color: #04AA6D;
-        color: #ffffff;
-        border: none;
-        padding: 10px 20px;
-        font-size: 17px;
-        font-family: Raleway;
-        cursor: pointer;
-    }
-
-    button:hover {
-        opacity: 0.8;
-    }
-
-    #prevBtn {
-        background-color: #bbbbbb;
-    }
-
-    /* Make circles that indicate the steps of the form: */
-    .step {
-        height: 15px;
-        width: 15px;
-        margin: 0 2px;
-        background-color: #bbbbbb;
-        border: none;
-        border-radius: 50%;
-        display: inline-block;
-        opacity: 0.5;
-    }
-
-    .step.active {
-        opacity: 1;
-    }
-
-    /* Mark the steps that are finished and valid: */
-    .step.finish {
-        background-color: #04AA6D;
-    }
-
-    .head {
-        text-align: center;
-        font-family: "Times New Roman", Times, serif;
-    }
-</style>
 
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -163,10 +80,6 @@
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">ศูนย์บริหารทรัพย์สิน มหาวิทยาลัยวลัยลักษณ์
-                            <a href="https://am.wu.ac.th/">คลิก</a>
-                        </div>
-
                         <div class="text-muted">มหาวิทยาลัยวลัยลักษณ์
                             <a href="https://www.wu.ac.th/th">คลิก</a>
                         </div>
@@ -177,7 +90,7 @@
         </div>
     </div>
 
-    <script src="sss.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
@@ -190,53 +103,3 @@
 
 </html>
 
-<script>
-    var ctx = document.getElementById('myChart').getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: [],
-        datasets: [{
-            label: 'Data from MongoDB',
-            data: [],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
-});
-
-// Connect to MongoDB and retrieve data
-fetch('/Data')
-.then(response => response.json())
-.then(data => {
-    // Update chart data with data from MongoDB
-    myChart.data.labels = data.labels;
-    myChart.data.datasets[0].data = data.data;
-    myChart.update();
-});
-
-</script>

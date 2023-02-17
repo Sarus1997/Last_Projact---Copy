@@ -82,6 +82,16 @@ function showCompliantCreateBox() {
         html:'<div class="mb-3"><label for="Name" class="form-label">Name</label>' +
             '<input class="form-control" id="Name" placeholder=" Name"></div>' +
 
+            // '<div class="mb-3"><label for="Type" class="form-label">Type</label>' +
+            // '<select class="form-select" id="Type" for="Type" aria-label="Default select example" placeholder=" Name">'+
+            //       '<option selected disabled>gg</option>'+
+            //       '<option value="a_la_carte">อาหารตามสั่ง</option>'+
+            //       '<option value="curry_rice">ข้าวราดแกง</option>'+
+            //       '<option value="noodles">ก๋วยเตี๋ยว</option>'+
+            //       '<option value="drink">เครื่องดื่ม</option>'+
+            //      ' <option value="appetizers">อาหารทานเล่น</option>'+
+            //   '</select>'+
+
             '<div class="mb-3"><label for="Type" class="form-label">Type</label>' +
             '<input class="form-control" id="Type" placeholder=" Type"></div>' +
 

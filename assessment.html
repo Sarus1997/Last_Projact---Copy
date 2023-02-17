@@ -44,7 +44,7 @@
   }
 
   #regForm {
-    background-color: #ffffff;
+    background-color: #e7e7e7;
     margin: 100px auto;
     font-family: Raleway;
     padding: 40px;
@@ -123,16 +123,13 @@
   }
 
   .bg2 {
-    background-color: #f2fffb
+    background-color: #f7fffd
   }
 
   .bg3 {
-    background-color: #ffebf3
+    background-color: #fff3eb
   }
 
-  .bg4 {
-    background-color: #ffe1ed
-  }
 
 </style>
 
@@ -190,17 +187,14 @@
       <form method="POST" id="regForm" action="http://localhost:3000">
         <div class="col-lg-12">
           <div class="bg2" class="card mb-4">
-            <div class="bg3" class="card-header" class="fas fa-chart-bar me-1"></i>
-              Wu-Assessment
-            </div>
             <div class="card-body">
-              <h2 class="bg4" class="head">
+              <h3 class="head">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/th/thumb/e/ed/Walailak_University_Logo.svg/1200px-Walailak_University_Logo.svg.png"
-                  width="150">
-                <font color="#7200D6">ระบบประเมินร้านอาหารออนไลน์</font> ณ <font color="#D68C00">ศูนย์อาหารช่อประดู่
+                  width="100">
+                <font size="5" color="#7200D6">ระบบประเมินร้านอาหารออนไลน์</font> ณ <font size="5" color="#D68C00">ศูนย์อาหารช่อประดู่
                 </font>
-              </h2>
+              </h3>
               <hr>
 
 
@@ -209,8 +203,8 @@
                 <font color="#D60000">Question Info:</font>
                 <h4 style="text-align: center;">Online Restaurant Assessment System for Chopradu Food Center</h4>
                 <br>
-                <p>ด้วยแพลตฟอร์มนี้ จะทำให้ลูกค้าสามารถประเมินร้านอาหารที่ตนเองใช้บริการได้ ซึ่ง
-                  มีวัตถุประสงค์เพื่อเก็บรวบรวมข้อมูลที่ได้จากการประเมิน
+                <p style="text-align: center;">ด้วยแพลตฟอร์มนี้ จะทำให้ลูกค้าสามารถประเมินร้านอาหารที่ตนเองใช้บริการได้ 
+                  ซึ่งมีวัตถุประสงค์เพื่อเก็บรวบรวมข้อมูลที่ได้จากการประเมิน
                   ที่จะนำข้อมูลที่ได้รับไปใช้ในการวิเคราะห์ข้อมูลเพื่อหาแนวทางในการ
                   แก้ปัญหาและปรับปรุงการบริการศูนย์อาหารช่อประดู่ ให้เป็นไปตามมาตรฐาน
                 </p>
@@ -221,7 +215,7 @@
                 <br>
                 <br>
                 <br>
-                <h4 style="text-align: center;"">เลือกร้านอาหาร</h2>
+                <h4 style="text-align: center;" size="10">เลือกร้านอาหาร</h2>
         </div>
 
         <div class=" tab">
@@ -230,7 +224,7 @@
                   <br>
                   <br>
                   <select class="form-select" id="id_restaurant" name="id_restaurant" aria-label="Default select example">
-                    <option selected></option>
+                    <option selected disabled>เลือกประเภทร้านอาหาร</option>
                     <option value="ชายสี่หมี่เกี๊ยว">ชายสี่หมี่เกี๊ยว</option>
                     <option value="สิทธิวงศ์ ผลไม้">สิทธิวงศ์ ผลไม้</option>
                     <option value="ร้านป้าละม่อม">ร้านป้าละม่อม</option>
@@ -254,7 +248,7 @@
                 <br>
                 <br>
                 <select class="form-select" id="id_type" name="id_type" aria-label="Default select example">
-                  <option selected></option>
+                  <option selected disabled>เลือกประเภทอาหาร</option>
                   <option value="a_la_carte">อาหารตามสั่ง</option>
                   <option value="curry_rice">ข้าวราดแกง</option>
                   <option value="noodles">ก๋วยเตี๋ยว</option>
@@ -285,7 +279,7 @@
                     <input class="form-check-input" type="radio" name="id_quality" id="id_quality" value="5">
                     <label class="form-check-label" for="id_quality">
                       ยอดเยี่ยม
-                    </label>
+                    </label> 
                   </div>
                 </div>
                 <div class="form-check">
@@ -706,12 +700,12 @@
   function showSuccessAlert() {
     Swal.fire({
       title: 'สำเร็จ!',
-      text: 'คุณได้สมัครสมาชิกเรียบร้อยแล้ว',
+      text: 'คุณได้ประเมินเรียบร้อยแล้ว',
       icon: 'success',
       confirmButtonText: 'ตกลง'
     }).then((result) => {
       if (result.isConfirmed) {
-        window.location.href = "index.html";
+        window.location.href = "thank.html";
       }
     })
 }
