@@ -7,11 +7,11 @@ function loadTable() {
     const xhttp = new XMLHttpRequest();
     xhttp.open("GET", "http://localhost:3000/admin");
     xhttp.send();
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var trHTML = '';
             var num = 1;
-            const objects = JSON.parse(this.responseText);  
+            const objects = JSON.parse(this.responseText);
             for (let object of objects) {
 
                 trHTML += '<tr>';
@@ -39,13 +39,13 @@ function loadQueryTable() {
     const searchText = document.getElementById('searchTextBox').value;
 
     const xhttp = new XMLHttpRequest();
-    if (searchText == ""){
+    if (searchText == "") {
         window.location.reload();
-    } eles 
+    } eles
     xhttp.open("GET", "http://localhost:3000/admin/findtext/" + searchText);
 
     xhttp.send();
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var trHTML = '';
             var num = 1;
@@ -62,7 +62,7 @@ function loadQueryTable() {
                 trHTML += '<a type="button" class="btn btn-outline-danger" onclick="compliantDelete(\'' + object['_id'] + '\')"><i class="fas fa-trash"></i></a></td>';
                 trHTML += "</tr>";
                 num++;
-            
+
 
             }
             console.log(trHTML);
@@ -79,27 +79,27 @@ function showCompliantCreateBox() {
 
     Swal.fire({
         title: 'เพิ่มข้อมูลร้าน',
-        html:'<div class="mb-3"><label for="Name" class="form-label">Name</label>' +
+        html: '<div class="mb-3"><label for="Name" class="form-label">Name</label>' +
             '<input class="form-control" id="Name" placeholder=" Name"></div>' +
 
-            // '<div class="mb-3"><label for="Type" class="form-label">Type</label>' +
-            // '<select class="form-select" id="Type" for="Type" aria-label="Default select example" placeholder=" Name">'+
-            //       '<option selected disabled>gg</option>'+
-            //       '<option value="a_la_carte">อาหารตามสั่ง</option>'+
-            //       '<option value="curry_rice">ข้าวราดแกง</option>'+
-            //       '<option value="noodles">ก๋วยเตี๋ยว</option>'+
-            //       '<option value="drink">เครื่องดื่ม</option>'+
-            //      ' <option value="appetizers">อาหารทานเล่น</option>'+
-            //   '</select>'+
-
             '<div class="mb-3"><label for="Type" class="form-label">Type</label>' +
-            '<input class="form-control" id="Type" placeholder=" Type"></div>' +
+            '<select class="form-select" id="Type" for="Type" aria-label="Default select example" placeholder=" Name">' +
+            '<option selected disabled>Select Type</option>' +
+            '<option value="อาหารตามสั่ง">อาหารตามสั่ง</option>' +
+            '<option value="ข้าวราดแกง">ข้าวราดแกง</option>' +
+            '<option value="ก๋วยเตี๋ยว">ก๋วยเตี๋ยว</option>' +
+            '<option value="เครื่องดื่ม">เครื่องดื่ม</option>' +
+            ' <option value="อาหารทานเล่น">อาหารทานเล่น</option>' +
+            '</select>' +
+
+            // '<div class="mb-3"><label for="Type" class="form-label">Type</label>' +
+            // '<input class="form-control" id="Type" placeholder=" Type"></div>' +
 
             '<div class="mb-3"><label for="Tel" class="form-label">Tel</label>' +
             '<input class="form-control" id="Tel" placeholder=" Tel"></div>' +
 
             '<div class="mb-3"><label for="Opening" class="form-label">Opening</label>' +
-            '<input class="form-control" id="Opening" placeholder=" Opening"></div>' ,
+            '<input class="form-control" id="Opening" placeholder=" Opening"></div>',
 
 
         focusConfirm: false,
@@ -131,7 +131,7 @@ function compliantCreate() {
         "Tel": Tel,
         "Opening": Opening,
     }));
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             const objects = JSON.parse(this.responseText);
             Swal.fire(
@@ -152,7 +152,7 @@ function compliantDelete(id) {
     xhttp.send(JSON.stringify({
         "_id": id
     }));
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
         if (this.readyState == 4) {
             const object = JSON.parse(this.responseText);
             console.log(object);
@@ -171,7 +171,7 @@ function showCompliantEditBox(id) {
     const xhttp = new XMLHttpRequest();
     xhttp.open("GET", "http://localhost:3000/admin/" + id);
     xhttp.send();
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             const object = JSON.parse(this.responseText).object;
             console.log("showCompliantEditBox", object);
@@ -182,10 +182,20 @@ function showCompliantEditBox(id) {
                     '<input class="form-control" id="Name" placeholder="Name" value="' + object['Name'] + '"></div>' +
 
                     '<div class="mb-3"><label for="Type" class="form-label">Type</label>' +
-                    '<input class="form-control" id="Type" placeholder="Type" value="' + object['Type'] + '"></div>'+
+                    '<select class="form-select" id="Type" for="Type" aria-label="Default select example" placeholder=" Name">' +
+                    '<option selected disabled>Select Type</option>' +
+                    '<option value="อาหารตามสั่ง">อาหารตามสั่ง</option>' +
+                    '<option value="ข้าวราดแกง">ข้าวราดแกง</option>' +
+                    '<option value="ก๋วยเตี๋ยว">ก๋วยเตี๋ยว</option>' +
+                    '<option value="เครื่องดื่ม">เครื่องดื่ม</option>' +
+                    ' <option value="อาหารทานเล่น">อาหารทานเล่น</option>' +
+                    '</select>' +
+
+                    // '<div class="mb-3"><label for="Type" class="form-label">Type</label>' +
+                    // '<input class="form-control" id="Type" placeholder="Type" value="' + object['Type'] + '"></div>'+
 
                     '<div class="mb-3"><label for="Tel" class="form-label">Tel</label>' +
-                    '<input class="form-control" id="Tel" placeholder="Tel" value="' + object['Tel'] + '"></div>'+
+                    '<input class="form-control" id="Tel" placeholder="Tel" value="' + object['Tel'] + '"></div>' +
 
                     '<div class="mb-3"><label for="Opening" class="form-label">Opening</label>' +
                     '<input class="form-control" id="Opening" placeholder="Opening" value="' + object['Opening'] + '"></div>',
@@ -225,7 +235,7 @@ function userEdit() {
         "Opening": Opening,
     }));
 
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             const objects = JSON.parse(this.responseText);
             Swal.fire(

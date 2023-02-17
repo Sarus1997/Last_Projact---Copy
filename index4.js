@@ -45,19 +45,19 @@ function loadGraph() {
                 }
 
                 switch (object['id_type']) {
-                    case "noodles":
+                    case "ก๋วยเตี๋ยว":
                         noodles = noodles + 1;
                         break;
-                    case "appetizers":
+                    case "อาหารทานเล่น":
                         appetizers = appetizers + 1;
                         break;
-                    case "a_la_carte":
+                    case "อาหารตามสั่ง":
                         a_la_carte = a_la_carte + 1;
                         break;
-                    case "drink":
+                    case "เครื่องดื่ม":
                         drink = drink + 1;
                         break;
-                    case "curry_rice":
+                    case "ข้าวราดแกง":
                         curry_rice = curry_rice + 1;
                         break;
                 }
