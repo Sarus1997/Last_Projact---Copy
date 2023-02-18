@@ -10,6 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cookie-session": "^2.0.0",
+    "ejs": "^3.1.8",
+    "express-validator": "^6.15.0",
     "nodemon": "^2.0.20"
   }
 }
