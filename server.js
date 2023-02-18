@@ -142,7 +142,7 @@ app.get('/admin/Type/:searchText', async (req, res) => {
 })
 
 // Create API assessment
-app.post('/', async (req, res) => {
+app.post('/admin/Data', async (req, res) => {
     const object = req.body;
     const client = new MongoClient(uri);
     await client.connect();
@@ -170,6 +170,19 @@ app.get('/admin2', async (req, res) => {
     res.status(200).send(objects);
 })
 
+
+// Create API register
+app.post('/admin/register', async (req, res) => {
+    const object = req.body;
+    const client = new MongoClient(uri);
+    await client.connect();
+    await client.db('admin').collection('register').insertOne({
+        "r_name": object.r_name,
+        "r_email": object.r_email,
+        "r_password": object.r_password,
+    });
+
+})
 
 
 app.listen(port, () => {

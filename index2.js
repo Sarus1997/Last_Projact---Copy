@@ -70,90 +70,90 @@ function loadQueryTable() {
     };
 }
 
-function loadGraph() {
-    var hhh = 1;
-    var Cha = 1;
-    var d = 0;
-    var other = 0;
+// function loadGraph() {
+//     var hhh = 1;
+//     var Cha = 1;
+//     var d = 0;
+//     var other = 0;
 
 
-    var hhh = 1;
-    var Cha = 1;
-    var d = 0;
-    var other = 0;
+//     var hhh = 1;
+//     var Cha = 1;
+//     var d = 0;
+//     var other = 0;
 
-    const xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "http://localhost:3000/admin/");
-    xhttp.send();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            const objects = JSON.parse(this.responseText);
-            for (let object of objects) {
-                switch (object['Name']) {
-                    case "hhh":
-                        hhh = hhh + 1;
-                        break;
-                    case "Cha":
-                        Cha = Cha + 1;
-                        break;
-                    case "d":
-                        d = d + 1;
-                        break;
-                    default:
-                        other = other + 1;
-                        break;
-                }
+//     const xhttp = new XMLHttpRequest();
+//     xhttp.open("GET", "http://localhost:3000/admin/");
+//     xhttp.send();
+//     xhttp.onreadystatechange = function () {
+//         if (this.readyState == 4 && this.status == 200) {
+//             const objects = JSON.parse(this.responseText);
+//             for (let object of objects) {
+//                 switch (object['Name']) {
+//                     case "hhh":
+//                         hhh = hhh + 1;
+//                         break;
+//                     case "Cha":
+//                         Cha = Cha + 1;
+//                         break;
+//                     case "d":
+//                         d = d + 1;
+//                         break;
+//                     default:
+//                         other = other + 1;
+//                         break;
+//                 }
 
-                switch (object['Type']) {
-                    case "hhh":
-                        hhh = hhh + 1;
-                        break;
-                    case "Cha":
-                        Cha = Cha + 1;
-                        break;
-                    case "d":
-                        d = d + 1;
-                    default:
-                        other = other + 1;
-                        break;
-                }
-            }
+//                 switch (object['Type']) {
+//                     case "hhh":
+//                         hhh = hhh + 1;
+//                         break;
+//                     case "Cha":
+//                         Cha = Cha + 1;
+//                         break;
+//                     case "d":
+//                         d = d + 1;
+//                     default:
+//                         other = other + 1;
+//                         break;
+//                 }
+//             }
 
-            var TimelyResponseData = google.visualization.arrayToDataTable([
-                ['Name', 'Case'],
-                ['hhh', hhh],
-                ['Cha', Cha],
-                ['d', d],
-                ['Other', other]
+//             var TimelyResponseData = google.visualization.arrayToDataTable([
+//                 ['Name', 'Case'],
+//                 ['hhh', hhh],
+//                 ['Cha', Cha],
+//                 ['d', d],
+//                 ['Other', other]
 
-            ]);
+//             ]);
 
-            var optionsTimelyResponse = { title: 'ประเภทเนื้อหาแอพพลิเคชั่นทั้งหมด' };
-            var chartTimelyResponse = new google.visualization.PieChart(document.getElementById('piechartTimelyResponse'));
-            chartTimelyResponse.draw(TimelyResponseData, optionsTimelyResponse);
+//             var optionsTimelyResponse = { title: 'ประเภทเนื้อหาแอพพลิเคชั่นทั้งหมด' };
+//             var chartTimelyResponse = new google.visualization.PieChart(document.getElementById('piechartTimelyResponse'));
+//             chartTimelyResponse.draw(TimelyResponseData, optionsTimelyResponse);
 
-            var dataSubmitted = google.visualization.arrayToDataTable([
-                ['Type', 'Number', {
-                    role: 'style'
-                }, {
-                        role: 'annotation'
-                    }],
-                ['1.', rrr, 'color: #FF2C2C', 'rrr'],
-                ['Other', other, 'color: #25F4BC', 'Other']
-            ]);
+//             var dataSubmitted = google.visualization.arrayToDataTable([
+//                 ['Type', 'Number', {
+//                     role: 'style'
+//                 }, {
+//                         role: 'annotation'
+//                     }],
+//                 ['1.', rrr, 'color: #FF2C2C', 'rrr'],
+//                 ['Other', other, 'color: #25F4BC', 'Other']
+//             ]);
 
-            var optionSubmitted = {
-                title: '10 อันดับ แอพพลิเคชั่น Business ยอดนิยม เพื่อทำให้กาทำธุระกิจง่ายขึ้น',
-                legend: { position: 'none' }
-            };
+//             var optionSubmitted = {
+//                 title: '10 อันดับ แอพพลิเคชั่น Business ยอดนิยม เพื่อทำให้กาทำธุระกิจง่ายขึ้น',
+//                 legend: { position: 'none' }
+//             };
 
-            var chartSubmitted = new google.visualization.BarChart(document.getElementById('barchartSubmitted'));
-            chartSubmitted.draw(dataSubmitted, optionSubmitted);
-        }
-    };
+//             var chartSubmitted = new google.visualization.BarChart(document.getElementById('barchartSubmitted'));
+//             chartSubmitted.draw(dataSubmitted, optionSubmitted);
+//         }
+//     };
 
 
-}
+// }
 
 function showCompliantCreateBox() {
 

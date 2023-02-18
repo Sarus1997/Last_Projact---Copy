@@ -39,17 +39,14 @@
     box-sizing: border-box;
   }
 
-  body {
-    background-color: #f1f1f1;
-  }
-
   #regForm {
-    background-color: #e7e7e7;
+    background: linear-gradient(#f5ddff , #ffeccb  );
+    border: thick double #5432ce;
     margin: 100px auto;
     font-family: Raleway;
     padding: 40px;
     width: 70%;
-    min-width: 300px;
+    min-width: 500px;
   }
 
   h1 {
@@ -118,19 +115,179 @@
     font-family: "Times New Roman", Times, serif;
   }
 
-  .bg {
-    background-image: url("https://c0.wallpaperflare.com/preview/184/811/591/blur-bread-rolls-counter-cup.jpg");
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: linear-gradient(#6f5d8d , #816f4b , #7c6586 , #5f8b7b);
   }
 
-  .bg2 {
-    background-color: #f7fffd
+  .login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, .5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
   }
 
-  .bg3 {
-    background-color: #fff3eb
+  .login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
   }
 
+  .login-box .user-box {
+    position: relative;
+  }
 
+  .login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+
+  .login-box .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+
+  .login-box .user-box input:focus~label,
+  .login-box .user-box input:valid~label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+  }
+
+  .login-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+  }
+
+  .login-box a:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+      0 0 25px #03e9f4,
+      0 0 50px #03e9f4,
+      0 0 100px #03e9f4;
+  }
+
+  .login-box a span {
+    position: absolute;
+    display: block;
+  }
+
+  .login-box a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #f40303);
+    animation: btn-anim1 1s linear infinite;
+  }
+
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+
+    50%,
+    100% {
+      left: 100%;
+    }
+  }
+
+  .login-box a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #ffffff);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+  }
+
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+
+    50%,
+    100% {
+      top: 100%;
+    }
+  }
+
+  .login-box a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #0343f4);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+  }
+
+  @keyframes btn-anim3 {
+    0% {
+      right: -100%;
+    }
+
+    50%,
+    100% {
+      right: 100%;
+    }
+  }
+
+  .login-box a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #7303f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+  }
+
+  @keyframes btn-anim4 {
+    0% {
+      bottom: -100%;
+    }
+
+    50%,
+    100% {
+      bottom: 100%;
+    }
+  }
 </style>
 
 <body class="sb-nav-fixed">
@@ -184,7 +341,7 @@
     </div>
     <div class="bg" id="layoutSidenav_content">
 
-      <form method="POST" id="regForm" action="http://localhost:3000">
+      <form method="POST" id="regForm" action="http://localhost:3000/admin/Data">
         <div class="col-lg-12">
           <div class="bg2" class="card mb-4">
             <div class="card-body">
@@ -192,7 +349,8 @@
                 <img
                   src="https://upload.wikimedia.org/wikipedia/th/thumb/e/ed/Walailak_University_Logo.svg/1200px-Walailak_University_Logo.svg.png"
                   width="100">
-                <font size="5" color="#7200D6">ระบบประเมินร้านอาหารออนไลน์</font> ณ <font size="5" color="#D68C00">ศูนย์อาหารช่อประดู่
+                <font size="5" color="#7200D6">ระบบประเมินร้านอาหารออนไลน์</font> ณ <font size="5" color="#D68C00">
+                  ศูนย์อาหารช่อประดู่
                 </font>
               </h3>
               <hr>
@@ -203,7 +361,7 @@
                 <font color="#D60000">Question Info:</font>
                 <h4 style="text-align: center;">Online Restaurant Assessment System for Chopradu Food Center</h4>
                 <br>
-                <p style="text-align: center;">ด้วยแพลตฟอร์มนี้ จะทำให้ลูกค้าสามารถประเมินร้านอาหารที่ตนเองใช้บริการได้ 
+                <p style="text-align: center;">ด้วยแพลตฟอร์มนี้ จะทำให้ลูกค้าสามารถประเมินร้านอาหารที่ตนเองใช้บริการได้
                   ซึ่งมีวัตถุประสงค์เพื่อเก็บรวบรวมข้อมูลที่ได้จากการประเมิน
                   ที่จะนำข้อมูลที่ได้รับไปใช้ในการวิเคราะห์ข้อมูลเพื่อหาแนวทางในการ
                   แก้ปัญหาและปรับปรุงการบริการศูนย์อาหารช่อประดู่ ให้เป็นไปตามมาตรฐาน
@@ -216,30 +374,30 @@
                 <br>
                 <br>
                 <h4 style="text-align: center;" size="10">เลือกร้านอาหาร</h2>
-        </div>
+              </div>
 
-        <div class=" tab">
-                  <font color="#D60000">Question Info:</font>
-                  <font size="4">ร้านอาหาร:</font>
-                  <br>
-                  <br>
-                  <select class="form-select" id="id_restaurant" name="id_restaurant" aria-label="Default select example">
-                    <option selected disabled>เลือกประเภทร้านอาหาร</option>
-                    <option value="ชายสี่หมี่เกี๊ยว">ชายสี่หมี่เกี๊ยว</option>
-                    <option value="สิทธิวงศ์ ผลไม้">สิทธิวงศ์ ผลไม้</option>
-                    <option value="ร้านป้าละม่อม">ร้านป้าละม่อม</option>
-                    <option value="ก๋วยเตี๋ยวเรือบัณฑิต">ก๋วยเตี๋ยวเรือบัณฑิต</option>
-                    <option value="ยินดี">ยินดี</option>
-                    <option value="ร้านอัสมา">ร้านอัสมา</option>
-                    <option value="ก๊ะฮะ">ก๊ะฮะ</option>
-                    <option value="ร้านชา 8">ร้านชา 8</option>
-                    <option value="เครื่องดื่มเดิม">เครื่องดื่มเดิม</option>
-                    <option value="ลูกชิ้นนิตติยา">ลูกชิ้นนิตติยา</option>
-                    <option value="น้องมายด์ เครื่องดื่ม">น้องมายด์ เครื่องดื่ม</option>
-                    <option value="ลูกชุบขนมหวาน">ลูกชุบขนมหวาน</option>
-                    <option value="ฮูดียา">ฮูดียา</option>
-                  </select>
-                  <br>
+              <div class=" tab">
+                <font color="#D60000">Question Info:</font>
+                <font size="4">ร้านอาหาร:</font>
+                <br>
+                <br>
+                <select class="form-select" id="id_restaurant" name="id_restaurant" aria-label="Default select example">
+                  <option selected disabled>เลือกประเภทร้านอาหาร</option>
+                  <option value="ชายสี่หมี่เกี๊ยว">ชายสี่หมี่เกี๊ยว</option>
+                  <option value="สิทธิวงศ์ ผลไม้">สิทธิวงศ์ ผลไม้</option>
+                  <option value="ร้านป้าละม่อม">ร้านป้าละม่อม</option>
+                  <option value="ก๋วยเตี๋ยวเรือบัณฑิต">ก๋วยเตี๋ยวเรือบัณฑิต</option>
+                  <option value="ยินดี">ยินดี</option>
+                  <option value="ร้านอัสมา">ร้านอัสมา</option>
+                  <option value="ก๊ะฮะ">ก๊ะฮะ</option>
+                  <option value="ร้านชา 8">ร้านชา 8</option>
+                  <option value="เครื่องดื่มเดิม">เครื่องดื่มเดิม</option>
+                  <option value="ลูกชิ้นนิตติยา">ลูกชิ้นนิตติยา</option>
+                  <option value="น้องมายด์ เครื่องดื่ม">น้องมายด์ เครื่องดื่ม</option>
+                  <option value="ลูกชุบขนมหวาน">ลูกชุบขนมหวาน</option>
+                  <option value="ฮูดียา">ฮูดียา</option>
+                </select>
+                <br>
               </div>
 
               <div class="tab">
@@ -279,7 +437,7 @@
                     <input class="form-check-input" type="radio" name="id_quality" id="id_quality" value="5">
                     <label class="form-check-label" for="id_quality">
                       ยอดเยี่ยม
-                    </label> 
+                    </label>
                   </div>
                 </div>
                 <div class="form-check">
@@ -293,8 +451,8 @@
                 <div class="form-check">
                   <div><i class="fas 	far fa-meh"></i>
                     <input class="form-check-input" type="radio" name="id_quality" id="id_quality" value="3">
-              <label class=" form-check-label" for="id_quality">
-                    ปานกลาง
+                    <label class=" form-check-label" for="id_quality">
+                      ปานกลาง
                     </label>
                   </div>
                 </div>
@@ -325,8 +483,8 @@
                 <div class="form-check">
                   <div><i class="fas far fa-thumbs-up"></i>
                     <input class="form-check-input" type="radio" name="id_price" id="id_price" value="5">
-              <label class=" form-check-label" for="id_price">
-                    ยอดเยี่ยม
+                    <label class=" form-check-label" for="id_price">
+                      ยอดเยี่ยม
                     </label>
                   </div>
                 </div>
@@ -341,8 +499,8 @@
                 <div class="form-check">
                   <div><i class="fas 	far fa-meh"></i>
                     <input class="form-check-input" type="radio" name="id_price" id="id_price" value="3">
-              <label class=" form-check-label" for="id_price">
-                    ปานกลาง
+                    <label class=" form-check-label" for="id_price">
+                      ปานกลาง
                     </label>
                   </div>
                 </div>
@@ -556,25 +714,22 @@
                 </div>
               </div>
 
-
-              <div class="tab">
-                <center>
-                  <h3>
-                    <font color="#00ffae"> THANK!! </font>
-                  </h3>
-                </center>
-              </div>
-
               <div style="overflow:auto;">
                 <div style="float:right;">
-                  <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                  <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                  <button type="button" id="prevBtn" onclick="nextPrev(-1)"><span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>Previous</button>
+                  <button type="button" id="nextBtn" onclick="nextPrev(1)">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>Next</button>
                 </div>
               </div>
 
               <!-- Circles which indicates the steps of the form: -->
               <div style="text-align:center;margin-top:40px;">
-                <span class="step"></span>
                 <span class="step"></span>
                 <span class="step"></span>
                 <span class="step"></span>
@@ -708,7 +863,8 @@
         window.location.href = "thank.html";
       }
     })
-}
+  }
 
 </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
