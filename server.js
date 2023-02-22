@@ -50,6 +50,7 @@ app.post('/admin/create', async (req, res) => {
         "Type": object.Type,
         "Tel": object.Tel,
         "Opening": object.Opening,
+        "Id_note": object.Id_note,
 });
     await client.close();
     res.status(200).send({
@@ -74,6 +75,7 @@ app.put('/admin/update', async (req, res) => {
             "Type": object.Type,
             "Tel": object.Tel,
             "Opening": object.Opening,
+            "Id_note": object.Id_note,
         }
         });
         

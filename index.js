@@ -91,15 +91,13 @@ function showCompliantCreateBox() {
             '<option value="เครื่องดื่ม">เครื่องดื่ม</option>' +
             ' <option value="อาหารทานเล่น">อาหารทานเล่น</option>' +
             '</select>' +
-
-            // '<div class="mb-3"><label for="Type" class="form-label">Type</label>' +
-            // '<input class="form-control" id="Type" placeholder=" Type"></div>' +
+            '</div>' +
 
             '<div class="mb-3"><label for="Tel" class="form-label">Tel</label>' +
             '<input class="form-control" id="Tel" placeholder=" Tel"></div>' +
 
             '<div class="mb-3"><label for="Opening" class="form-label">Opening</label>' +
-            '<input class="form-control" id="Opening" placeholder=" Opening"></div>',
+            '<input class="form-control" id="Opening" placeholder=" Opening"></div>' ,
 
 
         focusConfirm: false,
@@ -190,15 +188,14 @@ function showCompliantEditBox(id) {
                     '<option value="เครื่องดื่ม">เครื่องดื่ม</option>' +
                     ' <option value="อาหารทานเล่น">อาหารทานเล่น</option>' +
                     '</select>' +
-
-                    // '<div class="mb-3"><label for="Type" class="form-label">Type</label>' +
-                    // '<input class="form-control" id="Type" placeholder="Type" value="' + object['Type'] + '"></div>'+
-
+                    '</div>' +
+                    
                     '<div class="mb-3"><label for="Tel" class="form-label">Tel</label>' +
                     '<input class="form-control" id="Tel" placeholder="Tel" value="' + object['Tel'] + '"></div>' +
 
                     '<div class="mb-3"><label for="Opening" class="form-label">Opening</label>' +
                     '<input class="form-control" id="Opening" placeholder="Opening" value="' + object['Opening'] + '"></div>',
+
 
                 focusConfirm: false,
                 preConfirm: () => {

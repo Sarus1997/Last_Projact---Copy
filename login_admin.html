@@ -199,35 +199,12 @@
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
         <a class="navbar-brand ps-3" href="index.html">WU Assessment</a>
-        <!-- Sidebar Toggle-->
-        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
-                class="fas fa-bars"></i></button>
-
     </nav>
-    <div id="layoutSidenav">
-        <div id="layoutSidenav_nav">
-            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                <div class="sb-sidenav-menu">
-                    <div class="nav">
-                        <div class="sb-sidenav-menu-heading">ย้อนกลับ</div>
-                        <a class="nav-link" href="index.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-arrow-left"></i></div>
-                            ย้อนกลับ
-                        </a>
-                    </div>
-                </div>
-                <div class="sb-sidenav-footer">
-                    <div class="small">พัฒนาโดย</div>
-                    WU
-                </div>
-            </nav>
-        </div>
-        <div id="layoutSidenav_content">
 
+        <div id="layoutSidenav_content">
             <div id="layoutAuthentication_content">
                 <div class="login-box">
                     <h2>ลงชื่อเข้าใช้</h2>
-                    <h2><font size="3">(สำหรับเจ้าหน้าที่)</font></h2>
                     <form>
                         <div class="user-box">
                             <input type="text" name="" required="">
@@ -237,36 +214,31 @@
                             <input type="password" name="" required="">
                             <label>Password</label>
                         </div>
-
-                        <div> <a class="btn" onclick="confirmation(event)">
+                        <center><div> <a class="btn" onclick="confirmation(event)">
                                 <span></span>
                                 <span></span>
                                 <span></span>
                                 <span></span>
                                 <font size="2" color="#47CF73">ยืนยัน</font>
-                            </a> </div>
-
-                        <center>
+                            </a> </div></center>
 
 
-
-                            <div>
-                                <div> <a class="btn" onclick="fireInfoAlert2()">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                        <font size="2" color="#ffdd00">สร้างบัญชี (สำหรับเจ้าหน้าที่)</font>
-                                    </a> </div>
-                        </center>
+                            <center> <div> <a class="btn" onclick="fireInfoAlert3()">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <font size="2" color="#3EFFFF">หน้าแรก</font>
+                                </a> </div></center>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 
-
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
@@ -278,6 +250,7 @@
 </body>
 
 </html>
+
 <script>
     function confirmation(e) {
         e.preventDefault();
@@ -287,30 +260,30 @@
         Swal.fire({
             icon: 'success',
             title: 'ยืนยันการเข้าสู่ระบบ',
-            text: 'This action can be undone!',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes'
         }).then((result) => {
             if (result.value) {
-                window.location.href = "restaurant.html";
+                window.location.href = "admin.html";
             }
         })
     }
 
-    function fireInfoAlert2() {
+    function fireInfoAlert3() {
         Swal.fire({
             icon: 'info',
-            text: 'คุณต้องการสร้างบัญชีใช่หรือไม่',
+            text: 'กลับไปยังหน้าหลัก',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes'
         }).then((result) => {
             if (result.value) {
-                window.location.href = "register_admin.html";
+                window.location.href = "index.html";
             }
         })
     }
+
 </script>

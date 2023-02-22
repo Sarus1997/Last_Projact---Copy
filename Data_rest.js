@@ -20,6 +20,7 @@ function loadTable() {
                 trHTML += '<td>' + object['Type'] + '</td>';
                 trHTML += '<td>' + object['Tel'] + '</td>';
                 trHTML += '<td>' + object['Opening'] + '</td>';
+                trHTML += '<td>' + object['Id_note'] + '</td>';
                 trHTML += '<td>';
                 trHTML += '<a type="button" class="btn btn-outline-secondary" onclick="showCompliantEditBox(\'' + object['_id'] + '\')"><i class="fas fa-edit"></i></a>';
                 trHTML += "</tr>";
@@ -56,6 +57,7 @@ function loadQueryTable() {
                 trHTML += '<td>' + object['Type'] + '</td>';
                 trHTML += '<td>' + object['Tel'] + '</td>';
                 trHTML += '<td>' + object['Opening'] + '</td>';
+                trHTML += '<td>' + object['Id_note'] + '</td>';
                 trHTML += '<td>';
                 trHTML += '<a type="button" class="btn btn-outline-secondary" onclick="showCompliantEditBox(\'' + object['_id'] + '\')"><i class="fas fa-edit"></i></a>';
                 trHTML += "</tr>";
@@ -182,7 +184,10 @@ function showCompliantCreateBox() {
             '<input class="form-control" id="Tel" placeholder=" Tel"></div>' +
 
             '<div class="mb-3"><label for="Opening" class="form-label">Opening</label>' +
-            '<input class="form-control" id="Opening" placeholder=" Opening"></div>',
+            '<input class="form-control" id="Opening" placeholder=" Opening"></div>'+
+
+            '<div class="mb-3"><label for="Id_note" class="form-label">Id_note</label>' +
+            '<input class="form-control" id="Id_note" placeholder=" Id_note"></div>',
 
 
         focusConfirm: false,
@@ -197,12 +202,14 @@ function compliantCreate() {
     const Type = document.getElementById("Type").value;
     const Tel = document.getElementById("Tel").value;
     const Opening = document.getElementById("Opening").value;
+    const Id_note = document.getElementById("Id_note").value;
 
     console.log(JSON.stringify({
         "Name": Name,
         "Type": Type,
         "Tel": Tel,
         "Opening": Opening,
+        "Id_note": Id_note,
     }));
 
     const xhttp = new XMLHttpRequest();
@@ -213,6 +220,7 @@ function compliantCreate() {
         "Type": Type,
         "Tel": Tel,
         "Opening": Opening,
+        "Id_note": Id_note,
     }));
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -281,7 +289,10 @@ function showCompliantEditBox(id) {
                     '<input class="form-control" id="Tel" placeholder="Tel" value="' + object['Tel'] + '"></div>' +
 
                     '<div class="mb-3"><label for="Opening" class="form-label">Opening</label>' +
-                    '<input class="form-control" id="Opening" placeholder="Opening" value="' + object['Opening'] + '"></div>',
+                    '<input class="form-control" id="Opening" placeholder="Opening" value="' + object['Opening'] + '"></div>'+
+
+                    '<div class="mb-3"><label for="Id_note" class="form-label">Id_note</label>' +
+                    '<input class="form-control" id="Id_note" placeholder="Id_note" value="' + object['Id_note'] + '"></div>',
 
                 focusConfirm: false,
                 preConfirm: () => {
@@ -298,6 +309,7 @@ function userEdit() {
     const Type = document.getElementById("Type").value;
     const Tel = document.getElementById("Tel").value;
     const Opening = document.getElementById("Opening").value;
+    const Id_note = document.getElementById("Id_note").value;
 
     console.log(JSON.stringify({
         "_id": id,
@@ -305,6 +317,7 @@ function userEdit() {
         "Type": Type,
         "Tel": Tel,
         "Opening": Opening,
+        "Id_note": Id_note,
     }));
 
     const xhttp = new XMLHttpRequest();
@@ -316,6 +329,7 @@ function userEdit() {
         "Type": Type,
         "Tel": Tel,
         "Opening": Opening,
+        "Id_note": Id_note,
     }));
 
     xhttp.onreadystatechange = function () {

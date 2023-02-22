@@ -40,7 +40,7 @@
   }
 
   #regForm {
-    background: linear-gradient(#f5ddff , #ffeccb  );
+    background: linear-gradient(#f5ddff, #ffeccb);
     border: thick double #5432ce;
     margin: 100px auto;
     font-family: Raleway;
@@ -119,7 +119,7 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background: linear-gradient(#6f5d8d , #816f4b , #7c6586 , #5f8b7b);
+    background: linear-gradient(#6f5d8d, #816f4b, #7c6586, #5f8b7b);
   }
 
   .login-box {
@@ -407,11 +407,11 @@
                 <br>
                 <select class="form-select" id="id_type" name="id_type" aria-label="Default select example">
                   <option selected disabled>เลือกประเภทอาหาร</option>
-                  <option value="a_la_carte">อาหารตามสั่ง</option>
-                  <option value="curry_rice">ข้าวราดแกง</option>
-                  <option value="noodles">ก๋วยเตี๋ยว</option>
-                  <option value="drink">เครื่องดื่ม</option>
-                  <option value="appetizers">อาหารทานเล่น</option>
+                  <option value="อาหารตามสั่ง">อาหารตามสั่ง</option>
+                  <option value="ข้าวราดแกง">ข้าวราดแกง</option>
+                  <option value="ก๋วยเตี๋ยว">ก๋วยเตี๋ยว</option>
+                  <option value="เครื่องดื่ม">เครื่องดื่ม</option>
+                  <option value="อาหารทานเล่น">อาหารทานเล่น</option>
                 </select>
                 <br>
               </div>
@@ -716,15 +716,10 @@
 
               <div style="overflow:auto;">
                 <div style="float:right;">
-                  <button type="button" id="prevBtn" onclick="nextPrev(-1)"><span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>Previous</button>
+                  <button type="button" id="prevBtn" onclick="nextPrev(-1)">
+                    Previous</button>
                   <button type="button" id="nextBtn" onclick="nextPrev(1)">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>Next</button>
+                    Next</button>
                 </div>
               </div>
 
@@ -867,4 +862,3 @@
 
 </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-
