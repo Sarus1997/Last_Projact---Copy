@@ -181,7 +181,7 @@ function loadGraph() {
             ]);
 
             var optionSubmitted = {
-                title: 'ยอดรวมจำนวนการประเมินด้านคุณภาพอาหาร',
+                title: 'ยอดรวมจำนวนการประเมินด้านคุณราคา',
                 legend: { position: 'none' }
             };
 
