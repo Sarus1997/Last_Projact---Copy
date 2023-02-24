@@ -10,25 +10,25 @@ function loadGraph() {
     var db4 = 0;
     var db5 = 0;
 
-
-    var quality5 = 0;
-    var quality4 = 0;
-    var quality3 = 0;
-    var quality2 = 0;
-    var quality1 = 0;
-
     var p1 = 0;
     var p2 = 0;
     var p3 = 0;
     var p4 = 0;
     var p5 = 0;
 
-    var p11 = 0;
-    var p22 = 0;
-    var p33 = 0;
-    var p44 = 0;
-    var p55 = 0;
+    var s1 = 0;
+    var s2 = 0;
+    var s3 = 0;
+    var s4 = 0;
+    var s5 = 0;
 
+    var d1 = 0;
+    var d2 = 0;
+    var d3 = 0;
+    var d4 = 0;
+    var d5 = 0;
+
+    ///////////คุณภาพอาหาร//////////////
     const xhttp = new XMLHttpRequest();
     xhttp.open("GET", "http://localhost:3000/admin2");
     xhttp.send();
@@ -54,25 +54,9 @@ function loadGraph() {
                         break;
                 }
 
-                switch (object['id_quality']) {
-                    case "5":
-                        quality5 = quality5 + 1;
-                        break;
-                    case "4":
-                        quality4 = quality4 + 1;
-                        break;
-                    case "3":
-                        quality3 = quality3 + 1;
-                        break;
-                    case "2":
-                        quality2 = quality2 + 1;
-                        break;
-                    case "1":
-                        quality1 = quality1 + 1;
-                        break;
-                }
             }
 
+            //////////////////คุณภาพด้านราคา//////////////////
             for (let object of objects) {
                 switch (object['id_price']) {
                     case "5":
@@ -91,27 +75,51 @@ function loadGraph() {
                         p5 = p5 + 1;
                         break;
                 }
+            }
 
-                switch (object['id_price']) {
+            ///////////////คุณภาพด้านการบริการ///////////////////////
+            for (let object of objects) {
+                switch (object['id_serve']) {
                     case "5":
-                        p55 = p55 + 1;
+                        s1 = s1 + 1;
                         break;
                     case "4":
-                        p44 = p44 + 1;
+                        s2 = s2 + 1;
                         break;
                     case "3":
-                        p33 = p33 + 1;
+                        s3 = s3 + 1;
                         break;
                     case "2":
-                        p22 = p22 + 1;
+                        s4 = s4 + 1;
                         break;
                     case "1":
-                        p11 = p11 + 1;
+                        s5 = s5 + 1;
                         break;
                 }
             }
 
+            ////////////////คุณภาพด้านการแต่งการ////////////
+            for (let object of objects) {
+                switch (object['id_dress']) {
+                    case "5":
+                        d1 = d1 + 1;
+                        break;
+                    case "4":
+                        d2 = d2 + 1;
+                        break;
+                    case "3":
+                        d3 = d3 + 1;
+                        break;
+                    case "2":
+                        d4 = d4 + 1;
+                        break;
+                    case "1":
+                        d5 = d5 + 1;
+                        break;
+                }
+            }
 
+            /////////อาหาร////////////
             var TimelyResponseData = google.visualization.arrayToDataTable([
                 ['id_quality', 'Case'],
                 ['ดีเยี่ยม', db1],
@@ -121,9 +129,10 @@ function loadGraph() {
                 ['ปรับปรุง', db5],
             ]);
 
-            var optionsTimelyResponse = { 
-                title: 'ข้อมูลการประเมินของลูกค้าทั้งหมด ในระดับ คุณภาพของอาหาร ' 
-                ,is3D: true};
+            var optionsTimelyResponse = {
+                title: 'ข้อมูลการประเมินของลูกค้าทั้งหมด ในระดับ คุณภาพของอาหาร '
+                , is3D: true
+            };
 
             var chartTimelyResponse = new google.visualization.PieChart(document.getElementById('piechartTimelyResponse'));
             chartTimelyResponse.draw(TimelyResponseData, optionsTimelyResponse);
@@ -134,11 +143,11 @@ function loadGraph() {
                 }, {
                         role: 'annotation'
                     }],
-                [, quality5, 'color: #FF2C2C', '5'],
-                [, quality4, 'color: #FFA22C', '4'],
-                [, quality3, 'color: #FAFF2C', '3'],
-                [, quality2, 'color: #8DFF2C', '2'],
-                [, quality1, 'color: #2CFF41', '1'],
+                [, db1, 'color: #FF2C2C', '5'],
+                [, db2, 'color: #FFA22C', '4'],
+                [, db3, 'color: #FAFF2C', '3'],
+                [, db5, 'color: #8DFF2C', '2'],
+                [, db5, 'color: #2CFF41', '1'],
 
             ]);
 
@@ -146,10 +155,11 @@ function loadGraph() {
                 title: 'ยอดรวมจำนวนการประเมินด้านคุณภาพอาหาร',
                 legend: { position: 'none' }
             };
-///
+
             var chartSubmitted = new google.visualization.BarChart(document.getElementById('barchartSubmitted'));
             chartSubmitted.draw(dataSubmitted, optionSubmitted);
 
+            /////////////////ราคา/////////////////////////
             var TimelyResponseData = google.visualization.arrayToDataTable([
                 ['id_price', 'Case'],
                 ['ดีเยี่ยม', p1],
@@ -159,9 +169,10 @@ function loadGraph() {
                 ['ปรับปรุง', p5],
             ]);
 
-            var optionsTimelyResponse = { 
-                title: 'ข้อมูลการประเมินของลูกค้าทั้งหมด ในระดับ คุณภาพของอาหาร ' 
-                ,is3D: true};
+            var optionsTimelyResponse = {
+                title: 'ข้อมูลการประเมินของลูกค้าทั้งหมด ในระดับ คุณภาพของอาหาร '
+                , is3D: true
+            };
 
             var chartTimelyResponse = new google.visualization.PieChart(document.getElementById('chart2'));
             chartTimelyResponse.draw(TimelyResponseData, optionsTimelyResponse);
@@ -172,16 +183,16 @@ function loadGraph() {
                 }, {
                         role: 'annotation'
                     }],
-                [, p55, 'color: #FF2C2C', '5'],
-                [, p44, 'color: #FFA22C', '4'],
-                [, p33, 'color: #FAFF2C', '3'],
-                [, p22, 'color: #8DFF2C', '2'],
-                [, p11, 'color: #2CFF41', '1'],
+                [, p1, 'color: #FF2C2C', '5'],
+                [, p2, 'color: #FFA22C', '4'],
+                [, p3, 'color: #FAFF2C', '3'],
+                [, p4, 'color: #8DFF2C', '2'],
+                [, p5, 'color: #2CFF41', '1'],
 
             ]);
 
             var optionSubmitted = {
-                title: 'ยอดรวมจำนวนการประเมินด้านคุณราคา',
+                title: 'ยอดรวมจำนวนการประเมินด้านคุณภาพราคา',
                 legend: { position: 'none' }
             };
 
@@ -189,6 +200,91 @@ function loadGraph() {
             chartSubmitted.draw(dataSubmitted, optionSubmitted);
 
         }
-    };
 
-}
+        //////////////////บริการ////////////////////////
+        var TimelyResponseData = google.visualization.arrayToDataTable([
+            ['id_serve', 'Case'],
+            ['ดีเยี่ยม', s1],
+            ['ดี', s2],
+            ['ปานกลาง', s3],
+            ['พอใช้', s4],
+            ['ปรับปรุง', s5],
+        ]);
+
+        var optionsTimelyResponse = {
+            title: 'ข้อมูลการประเมินของลูกค้าทั้งหมด ในระดับ คุณภาพของการบริการ '
+            , pieHole: 0.4,
+        };
+
+        var chartTimelyResponse = new google.visualization.PieChart(document.getElementById('chart4'));
+        chartTimelyResponse.draw(TimelyResponseData, optionsTimelyResponse);
+
+        var dataSubmitted = google.visualization.arrayToDataTable([
+            ['Data', 'id_serve', {
+                role: 'style'
+            }, {
+                    role: 'annotation'
+                }],
+            [, s1, 'color: #FF2C2C', '5'],
+            [, s2, 'color: #FFA22C', '4'],
+            [, s3, 'color: #FAFF2C', '3'],
+            [, s4, 'color: #8DFF2C', '2'],
+            [, s5, 'color: #2CFF41', '1'],
+
+        ]);
+
+        var optionSubmitted = {
+            title: 'ยอดรวมจำนวนการประเมินด้านการบริการ',
+            legend: { position: 'none' }
+        };
+
+        var chartSubmitted = new google.visualization.BarChart(document.getElementById('chart5'));
+        chartSubmitted.draw(dataSubmitted, optionSubmitted);
+
+
+        //////////////////การแต่งกาย////////////////////////
+        var TimelyResponseData = google.visualization.arrayToDataTable([
+            ['id_dress', 'Case'],
+            ['ดีเยี่ยม', d1],
+            ['ดี', d2],
+            ['ปานกลาง', d3],
+            ['พอใช้', d4],
+            ['ปรับปรุง', d5],
+        ]);
+
+        var optionsTimelyResponse = {
+            title: 'ข้อมูลการประเมินของลูกค้าทั้งหมด ในระดับ คุณภาพของการแต่งกาย '
+            , pieHole: 0.4,
+        };
+
+        var chartTimelyResponse = new google.visualization.PieChart(document.getElementById('chart6'));
+        chartTimelyResponse.draw(TimelyResponseData, optionsTimelyResponse);
+
+        var dataSubmitted = google.visualization.arrayToDataTable([
+            ['Data', 'id_dress', {
+                role: 'style'
+            }, {
+                    role: 'annotation'
+                }],
+            [, d1, 'color: #FF2C2C', '5'],
+            [, d2, 'color: #FFA22C', '4'],
+            [, d3, 'color: #FAFF2C', '3'],
+            [, d4, 'color: #8DFF2C', '2'],
+            [, d5, 'color: #2CFF41', '1'],
+
+        ]);
+
+        var optionSubmitted = {
+            title: 'ยอดรวมจำนวนการประเมินด้านการแต่งกาย',
+            legend: { position: 'none' }
+        };
+
+        var chartSubmitted = new google.visualization.BarChart(document.getElementById('chart7'));
+        chartSubmitted.draw(dataSubmitted, optionSubmitted);
+
+
+
+    }
+
+};
+
