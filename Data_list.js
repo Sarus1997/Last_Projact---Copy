@@ -20,7 +20,6 @@ function loadTable() {
                 trHTML += '<td>' + object['Type'] + '</td>';
                 trHTML += '<td>' + object['Tel'] + '</td>';
                 trHTML += '<td>' + object['Opening'] + '</td>';
-                trHTML += '<td>' + object['Id_note'] + '</td>';
                 trHTML += '<td>';
                 trHTML += "</tr>";
 
@@ -56,7 +55,6 @@ function loadQueryTable() {
                 trHTML += '<td>' + object['Type'] + '</td>';
                 trHTML += '<td>' + object['Tel'] + '</td>';
                 trHTML += '<td>' + object['Opening'] + '</td>';
-                trHTML += '<td>' + object['Id_note'] + '</td>';
                 trHTML += '<td>';
                 trHTML += "</tr>";
                 num++;
