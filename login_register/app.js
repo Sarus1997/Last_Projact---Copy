@@ -2,8 +2,12 @@ const express = require('express');
 const path = require('path');
 const cookieSession = require('cookie-session');
 const bcrypt = require('bcrypt');
-const dbConnection = require('../database');
+const mongoose = require('mongoose');
 const {body, validationResult} = require('express-validator');
+
+mongoose.connect('mongodb://localhost:27017/mydb', { useNewUrlParser: true, useUnifiedTopology: true })
+.then(() => console.log('Connected to MongoDB...'))
+.catch(err => console.error('Could not connect to MongoDB...', err));
 
 const app = express();
 app.use(express.urlencoded({extended: false}));

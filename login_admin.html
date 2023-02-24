@@ -230,6 +230,15 @@
                                     <span></span>
                                     <font size="2" color="#3EFFFF">หน้าแรก</font>
                                 </a> </div></center>
+
+
+                                <center> <div> <a class="btn" onclick="fireInfoAlert3()">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <font size="2" color="#3EFFFF">ลงทะเบียน</font>
+                                </a> </div></center>
                         </div>
                     </form>
                 </div>
@@ -271,7 +280,7 @@
         })
     }
 
-    function fireInfoAlert3() {
+    function fireInfoAlert2() {
         Swal.fire({
             icon: 'info',
             text: 'กลับไปยังหน้าหลัก',
@@ -282,6 +291,21 @@
         }).then((result) => {
             if (result.value) {
                 window.location.href = "index.html";
+            }
+        })
+    }
+
+    function fireInfoAlert3() {
+        Swal.fire({
+            icon: 'info',
+            text: 'คุณต้องการสร้างบัญชีใช่หรือไม่',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes'
+        }).then((result) => {
+            if (result.value) {
+                window.location.href = "register_admin.html";
             }
         })
     }
