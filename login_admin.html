@@ -205,15 +205,17 @@
             <div id="layoutAuthentication_content">
                 <div class="login-box">
                     <h2>ลงชื่อเข้าใช้</h2>
-                    <form>
+
+                    <form method="POST" action="http://localhost:3000/admin/login">
                         <div class="user-box">
-                            <input type="text" name="" required="">
-                            <label>Username</label>
+                            <input type="email" name="email" type="email" id="email" required>
+                            <label>Email</label>
                         </div>
                         <div class="user-box">
-                            <input type="password" name="" required="">
+                            <input type="password" name="password" id="password" required>
                             <label>Password</label>
                         </div>
+
                         <center><div> <a class="btn" onclick="confirmation(event)">
                                 <span></span>
                                 <span></span>
