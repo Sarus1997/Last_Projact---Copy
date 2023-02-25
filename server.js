@@ -2,6 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const app = express()
 const port = 3000
+const crypto = require('crypto');
 
 const bodyParser = require('body-parser')
 app.use(bodyParser.json())
@@ -16,8 +17,8 @@ app.get('/', (req, res) => {
 
 
 const { MongoClient } = require("mongodb");
-const uri = "mongodb://Sarus:000000@localhost:27017/?authMechanism=DEFAULT&authSource=admin";
-///const uri = "mongodb://localhost:27017";
+// const uri = "mongodb://Sarus:000000@localhost:27017/?authMechanism=DEFAULT&authSource=admin";
+    const uri = "mongodb://127.0.0.1:27017";
 const connectDB = async () => {
     try {
         const client = new MongoClient(uri);
@@ -51,6 +52,7 @@ app.post('/admin/create', async (req, res) => {
         "Type": object.Type,
         "Tel": object.Tel,
         "Opening": object.Opening,
+        "Id_note": object.Id_note,
 });
     await client.close();
     res.status(200).send({
@@ -59,6 +61,7 @@ app.post('/admin/create', async (req, res) => {
         "object": object
     });
 })
+
 
 // Update API
 const { ObjectId } = require('mongodb')
@@ -74,6 +77,7 @@ app.put('/admin/update', async (req, res) => {
             "Type": object.Type,
             "Tel": object.Tel,
             "Opening": object.Opening,
+            "Id_note": object.Id_note,
         }
         });
         
@@ -168,6 +172,65 @@ app.get('/admin2', async (req, res) => {
 
     await client.close();
     res.status(200).send(objects);
+})
+
+// Work 1 THB Per 1 Line
+app.post('/register', async (req, res) => {
+    const object = req.body
+    object.r_password = crypto.createHash('sha256').update(object.r_password).digest('hex');
+    const client = new MongoClient(uri);
+    await client.connect();
+    check_user = await client.db('admin').collection('membership').find({ "r_name": object.r_name }).toArray();
+    if (check_user.length > 0) {
+        res.status(200).send({
+            "status": "error",
+            "message": "User is already exist"
+        });
+        return;
+    } else {
+        await client.db('admin').collection('membership').insertOne({
+            "r_name": object.r_name,
+            "r_email": object.r_email,
+            "r_password": object.r_password,
+            "r_role": object.r_role
+        });
+        await client.close();
+        res.status(200).send({
+            "status": "ok",
+            "message": "Object is created",
+            "object": object
+        });
+    }
+})
+
+app.post('/login', async (req, res) => {
+    const object = req.body;
+    object.r_password = crypto.createHash('sha256').update(object.r_password).digest('hex');
+    const client = new MongoClient(uri);
+    await client.connect();
+    results = await client.db('admin').collection('membership').find({
+        "r_name": object.r_name,
+    }).toArray();
+    if (results.length == 0) {
+        res.status(200).send({
+            "status": "error",
+            "message": "Username or Password is incorrect"
+        });
+    } else {
+        if (results[0].r_password == object.r_password) {
+            res.status(200).send({
+                "status": "ok",
+                "message": "Login success",
+                "object": [results[0]["r_name"], results[0]["r_role"]]
+            });
+        } else {
+            res.status(200).send({
+                "status": "error",
+                "message": "Username or Password is incorrect"
+            });
+        }
+    }
+    await client.close();
 })
 
 app.listen(port, () => {
