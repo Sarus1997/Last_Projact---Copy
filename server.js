@@ -173,3 +173,35 @@ app.get('/admin2', async (req, res) => {
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 });
+
+
+
+app.post("/addname", async (req, res) => {
+    app.post('/admin/create', async (req, res) => {
+        const object = req.body;
+        const client = new MongoClient(uri);
+        await client.connect();
+        await client.db('admin').collection('register').insertOne({
+            "name": object.name,
+            "email": object.email,
+            "password": object.password,
+    });
+        await client.close();
+        res.status(200).send({
+            "status": "ok",
+            "message": "Object is created",
+            "object": object
+        });
+    })
+    
+    .save()
+        .then(item => {
+            res.send("item saved to database");
+        })
+        .catch(err => {
+            res.status(400).send("unable to save to database");
+        });
+});
+
+
+// Path: backend\register_admin.html
