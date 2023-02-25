@@ -211,7 +211,7 @@
                         <font size="2" color="#ffdd00">(สำหรับเจ้าหน้าที่)</font>
                     </p>
                 </center>
-                <form>
+                <form method="POST" action="http://localhost:3000/addname">
                     <div class="user-box">
                         <input id="username" type="text" name="" required="">
                         <label>Username</label>
@@ -224,6 +224,7 @@
                         <input id="password" type="password" name="" required="">
                         <label>Password</label>
                     </div>
+<<<<<<< HEAD
                     <div> <a class="btn" onclick="confirmation(event)">
                             <span></span>
                             <span></span>
@@ -231,21 +232,33 @@
                             <span></span>
                             <font size="2" color="#ffdd00">ยืนยัน</font>
                         </a> </div>
+=======
 
-                        <div> <a class="btn" onclick="confirmation2(event)">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <font size="2" color="#13E850">กลับสู่หน้าแรก</font>
-                        </a> </div>
+                    <center>
+                        <div><a class="btn" onclick="confirmation2(event)">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <font size="2" color="#13E850">หน้าแรก</font>
+                            </a>
+>>>>>>> 2339789ee91ba2069306b627bafb6f341ab2c5c3
+
+                            <a class="btn" onclick="confirmation(event)" type="submit" " value=" Submit"">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <font size="2" color="#ffdd00">- ยืนยัน -</font>
+                            </a>
+                        </div>
+                    </center>
                 </form>
             </div>
         </div>
     </div>
-    </div>
 
-
+    <script src="register_admin.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>
@@ -299,6 +312,7 @@
                             r_password: password,
                             r_role: "admin"
 
+<<<<<<< HEAD
                         },
                         success: function (data) {
                             if (data["status"] == "ok") {
@@ -335,6 +349,63 @@
 
     function confirmation2() {
                 window.location.href = "index.html";
+=======
+        var url = e.currentTarget.getAttribute('href')
+
+        Swal.fire({
+            title: 'ยืนยันการลงทะเบียน',
+            showCancelButton: true,
+            confirmButtonText: 'Save',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire('Saved!', '', 'success')
+            } if (result) {
+                Swal.fire(
+                    'Good job!',
+                    'You clicked the button!',
+                    'success'
+                ).then((result) => {
+                    if (result.value) {
+                        window.location.href = "admin.html";
+                    }
+                })
+
+            } else if (result.isDenied) {
+                Swal.fire('Changes are not saved', '', 'info')
+            }
+        })
+
+    }
+
+
+    function confirmation2(e) {
+        e.preventDefault();
+
+        var url = e.currentTarget.getAttribute('href')
+
+        Swal.fire({
+            title: 'กลับสู่หน้าแรก',
+            showCancelButton: true,
+            confirmButtonText: 'yes',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire('Saved!', '', 'success')
+            } if (result) {
+                Swal.fire(
+                    'ok!',
+                    'You clicked the button!',
+                    'warning'
+                ).then((result) => {
+                    if (result.value) {
+                        window.location.href = "index.html";
+                    }
+                })
+
+            } else if (result.isDenied) {
+                Swal.fire('Changes are not saved', '', 'info')
+            }
+        })
+>>>>>>> 2339789ee91ba2069306b627bafb6f341ab2c5c3
     }
 
 </script>
