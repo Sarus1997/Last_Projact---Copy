@@ -16,8 +16,8 @@ app.get('/', (req, res) => {
 
 
 const { MongoClient } = require("mongodb");
-const uri = "mongodb://Sarus:000000@localhost:27017/?authMechanism=DEFAULT&authSource=admin";
-///const uri = "mongodb://localhost:27017";
+///const uri = "mongodb://Sarus:000000@localhost:27017/?authMechanism=DEFAULT&authSource=admin";
+const uri = "mongodb://127.0.0.1:27017";
 const connectDB = async () => {
     try {
         const client = new MongoClient(uri);
