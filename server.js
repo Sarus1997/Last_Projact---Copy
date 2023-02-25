@@ -51,7 +51,6 @@ app.post('/admin/create', async (req, res) => {
         "Type": object.Type,
         "Tel": object.Tel,
         "Opening": object.Opening,
-        "Id_note": object.Id_note,
 });
     await client.close();
     res.status(200).send({
@@ -60,7 +59,6 @@ app.post('/admin/create', async (req, res) => {
         "object": object
     });
 })
-
 
 // Update API
 const { ObjectId } = require('mongodb')
@@ -76,7 +74,6 @@ app.put('/admin/update', async (req, res) => {
             "Type": object.Type,
             "Tel": object.Tel,
             "Opening": object.Opening,
-            "Id_note": object.Id_note,
         }
         });
         
@@ -172,21 +169,6 @@ app.get('/admin2', async (req, res) => {
     await client.close();
     res.status(200).send(objects);
 })
-
-
-// Create API register
-app.post('/admin/register', async (req, res) => {
-    const object = req.body;
-    const client = new MongoClient(uri);
-    await client.connect();
-    await client.db('admin').collection('register').insertOne({
-        "r_name": object.r_name,
-        "r_email": object.r_email,
-        "r_password": object.r_password,
-    });
-
-})
-
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
