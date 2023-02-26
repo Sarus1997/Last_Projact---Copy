@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Assessment-Wu</title>
+  <link href="css/styles.css" rel="stylesheet" />
+  <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+
+  <!-- Bootstrap CSS -->
+
+
+</head>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  input {
+    padding: 10px;
+    width: 100%;
+    font-size: 17px;
+    font-family: Raleway;
+    border: 1px solid #aaaaaa;
+  }
+
+  /* Mark input boxes that gets an error on validation: */
+  input.invalid {
+    background-color: #ffdddd;
+  }
+
+
+  .head {
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: linear-gradient(#ffdbc7, #f2d6ff);
+  }
+
+  .hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.ytimg.com/vi/f-XqC_z3o34/maxresdefault.jpg");
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  .card-body {
+    background: linear-gradient(#fff7f7, #f9fffd);
+    border: thick double #62af62;
+  }
+</style>
+
+<body class="sb-nav-fixed">
+  <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+    <!-- Navbar Brand-->
+    <a class="navbar-brand ps-3" style="color: #ff8111;" href="index.html">WU Assessment</a>
+    <!-- Sidebar Toggle-->
+    <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+        class="fas fa-bars"></i></button>
+    <div class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+            <img id="profile_show" src="https://cdn-icons-png.flaticon.com/512/3177/3177440.png" class="img-fluid rounded-circle" width="40px" alt="Responsive image">
+        </div>
+        <div class="d-none d-md-inline-block form-inline me-0 me-md-3 my-2 my-md-0">
+            <h1 id="username_show" class="text-white"></h1>
+        </div>
+        <div class="d-none d-md-inline-block form-inline me-0 me-md-3 my-2 my-md-0">
+            <button class="btn btn-primary" id="logout" onclick="logout();">ลงชื่อออก</button>
+        </div>
+  </nav>
+  <div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+      <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+        <div class="sb-sidenav-menu">
+          <div class="nav">
+            <div class="sb-sidenav-menu-heading">เมนู</div>
+            <a class="nav-link" href="index.html">
+              <div class="sb-nav-link-icon"><i class="fas fa-arrow-left"></i></div>
+              กลับสู่หน้าแรก
+            </a>
+            <div class="sb-sidenav-menu-heading">Restaurant List</div>
+            <a class="nav-link" href="restaurant_list.html">
+              <div class="sb-nav-link-icon"><i class="far fa-address-book"></i></div>
+              ข้อมูลร้านอาหาร
+            </a>
+          </div>
+        </div>
+        <div class="sb-sidenav-footer">
+          <div class="small">พัฒนาโดย</div>
+          IT-WU
+        </div>
+      </nav>
+    </div>
+
+
+    <div class="bg" id="layoutSidenav_content">
+
+      <div class="container">
+        <div class="card">
+          <form method="POST" action="http://localhost:3000/admin/Data">
+            <div class="card-body">
+              <div class="hero-image">
+                <div class="hero-text">
+                  <h1 style="font-size:30px">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <h3 class="head">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/th/thumb/e/ed/Walailak_University_Logo.svg/1200px-Walailak_University_Logo.svg.png"
+                  width="150"><br>
+                <font size="5" color="#7200D6">ระบบประเมินร้านอาหารออนไลน์</font> ณ <font size="5" color="#D68C00">
+                  ศูนย์อาหารช่อประดู่
+                </font>
+              </h3>
+              <br>
+              <p style="text-align: center;">ด้วยแพลตฟอร์มนี้ จะทำให้ลูกค้าสามารถประเมินร้านอาหารที่ตนเองใช้บริการได้
+                ซึ่งมีวัตถุประสงค์เพื่อเก็บรวบรวมข้อมูลที่ได้จากการประเมิน<br>
+                ที่จะนำข้อมูลที่ได้รับไปใช้ในการวิเคราะห์ข้อมูลเพื่อหาแนวทางในการ
+                แก้ปัญหาและปรับปรุงการบริการศูนย์อาหารช่อประดู่ ให้เป็นไปตามมาตรฐาน
+              </p>
+            </div>
+
+            <div class="card-body">
+              <div class="container">
+                <div class="card-body">
+                  <br>
+                  <br>
+                  <font color="#D60000">Question Info:</font>
+                  <font size="4">ร้านอาหาร:</font>
+                  <select class="form-select" id="id_restaurant" name="id_restaurant"
+                    aria-label="Default select example">
+                    <option selected disabled>เลือกประเภทร้านอาหาร</option>
+                    <option value="ชายสี่หมี่เกี๊ยว">ชายสี่หมี่เกี๊ยว</option>
+                    <option value="สิทธิวงศ์ ผลไม้">สิทธิวงศ์ ผลไม้</option>
+                    <option value="ร้านป้าละม่อม">ร้านป้าละม่อม</option>
+                    <option value="ก๋วยเตี๋ยวเรือบัณฑิต">ก๋วยเตี๋ยวเรือบัณฑิต</option>
+                    <option value="ยินดี">ยินดี</option>
+                    <option value="ร้านอัสมา">ร้านอัสมา</option>
+                    <option value="ก๊ะฮะ">ก๊ะฮะ</option>
+                    <option value="ร้านชา 8">ร้านชา 8</option>
+                    <option value="เครื่องดื่มเดิม">เครื่องดื่มเดิม</option>
+                    <option value="ลูกชิ้นนิตติยา">ลูกชิ้นนิตติยา</option>
+                    <option value="น้องมายด์ เครื่องดื่ม">น้องมายด์ เครื่องดื่ม</option>
+                    <option value="ลูกชุบขนมหวาน">ลูกชุบขนมหวาน</option>
+                    <option value="ฮูดียา">ฮูดียา</option>
+                  </select>
+                  <br>
+                </div>
+
+                <div class="card-body">
+                  <font color="#D60000">Question Info:</font>
+                  <font size="4">ประเภทร้านอาหาร:</font>
+                  <select class="form-select" id="id_type" name="id_type" aria-label="Default select example">
+                    <option selected disabled>เลือกประเภทอาหาร</option>
+                    <option value="อาหารตามสั่ง">อาหารตามสั่ง</option>
+                    <option value="ข้าวราดแกง">ข้าวราดแกง</option>
+                    <option value="ก๋วยเตี๋ยว">ก๋วยเตี๋ยว</option>
+                    <option value="เครื่องดื่ม">เครื่องดื่ม</option>
+                    <option value="อาหารทานเล่น">อาหารทานเล่น</option>
+                  </select>
+                  <br>
+                </div>
+
+                <!-- id 1 -->
+                <div class="card-body" id="id_quality">
+                  <font color="#D60000">Question Info:</font>
+                  <font size="4">คุณภาพอาหาร:</font>
+                  <div class="form-check">
+                    <div><i class="fas far fa-thumbs-up"></i>
+                      <input class="form-check-input" type="radio" name="id_quality" id="id_quality" value="5">
+                      <label class="form-check-label" for="id_quality">
+                        ยอดเยี่ยม
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <div><i class="fas 	far fa-smile"></i>
+                      <input class="form-check-input" type="radio" name="id_quality" id="id_quality" value="4">
+                      <label class="form-check-label" for="id_quality">
+                        ดี
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <div><i class="fas 	far fa-meh"></i>
+                      <input class="form-check-input" type="radio" name="id_quality" id="id_quality" value="3">
+                      <label class=" form-check-label" for="id_quality">
+                        ปานกลาง
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <div><i class="fas 	far fa-frown"></i>
+                      <input class="form-check-input" type="radio" name="id_quality" id="id_quality" value="2">
+                      <label class="form-check-label" for="id_quality">
+                        พอใช้
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <div><i class="fas	far fa-thumbs-down"></i>
+                      <input class="form-check-input" type="radio" name="id_quality" id="id_quality" value="1">
+                      <label class="form-check-label" for="id_quality">
+                        ปรับปรุง
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- id 2 -->
+                <div class="card-body" id="id_price">
+                  <font color="#D60000">Question Info:</font>
+                  <font size="4">ด้านราคา:</font>
+                  <div class="form-check">
+                    <div><i class="fas far fa-thumbs-up"></i>
+                      <input class="form-check-input" type="radio" name="id_price" id="id_price" value="5">
+                      <label class=" form-check-label" for="id_price">
+                        ยอดเยี่ยม
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <div><i class="fas 	far fa-smile"></i>
+                      <input class="form-check-input" type="radio" name="id_price" id="id_price" value="4">
+                      <label class="form-check-label" for="id_price">
+                        ดี
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <div><i class="fas 	far fa-meh"></i>
+                      <input class="form-check-input" type="radio" name="id_price" id="id_price" value="3">
+                      <label class=" form-check-label" for="id_price">
+                        ปานกลาง
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <div><i class="fas 	far fa-frown"></i>
+                      <input class="form-check-input" type="radio" name="id_price" id="id_price" value="2">
+                      <label class="form-check-label" for="id_price">
+                        พอใช้
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <div><i class="fas	far fa-thumbs-down"></i>
+                      <input class="form-check-input" type="radio" name="id_price" id="id_price" value="1">
+                      <label class="form-check-label" for="id_price">
+                        ปรับปรุง
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- id 3 -->
+                <div class="card-body" id="id_serve">
+                  <font color="#D60000">Question Info:</font>
+                  <font size="4">ด้านการบริการ:</font>
+                  <div class="form-check">
+                    <div><i class="fas	far fa-thumbs-up"></i>
+                      <input class="form-check-input" type="radio" name="id_serve" id="id_serve" value="5">
+                      <label class="form-check-label" for="id_serve">
+                        ยอดเยี่ยม
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <div><i class="fas 	far fa-smile"></i>
+                      <input class="form-check-input" type="radio" name="id_serve" id="id_serve" value="4">
+                      <label class="form-check-label" for="id_serve">
+                        ดี
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <div><i class="fas 	far fa-meh"></i>
+                      <input class="form-check-input" type="radio" name="id_serve" id="id_serve" value="3">
+                      <label class="form-check-label" for="id_serve">
+                        ปานกลาง
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <div><i class="fas 	far fa-frown"></i>
+                      <input class="form-check-input" type="radio" name="id_serve" id="id_serve" value="2">
+                      <label class="form-check-label" for="id_serve">
+                        พอใช้
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <div><i class="fas	far fa-thumbs-down"></i>
+                      <input class="form-check-input" type="radio" name="id_serve" id="id_serve" value="1">
+                      <label class="form-check-label" for="id_serve">
+                        ปรับปรุง
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- id 4 -->
+                <div class="card-body" id="id_dress">
+                  <font color="#D60000">Question Info:</font>
+                  <font size="4">ด้านการแต่งกาย:</font>
+                  <div class="form-check">
+                    <div><i class="fas 	far fa-thumbs-up"></i>
+                      <input class="form-check-input" type="radio" name="id_dress" id="id_dress" value="5">
+                      <label class="form-check-label" for="id_dress">
+                        ยอดเยี่ยม
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <div><i class="fas 	far fa-smile"></i>
+                      <input class="form-check-input" type="radio" name="id_dress" id="id_dress" value="4">
+                      <label class="form-check-label" for="id_dress">
+                        ดี
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <div><i class="fas 	far fa-meh"></i>
+                      <input class="form-check-input" type="radio" name="id_dress" id="id_dress" value="3">
+                      <label class="form-check-label" for="id_dress">
+                        ปานกลาง
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <div><i class="fas 	far fa-frown"></i>
+                      <input class="form-check-input" type="radio" name="id_dress" id="id_dress" value="2">
+                      <label class="form-check-label" for="id_dress">
+                        พอใช้
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <div><i class="fas	far fa-thumbs-down"></i>
+                      <input class="form-check-input" type="radio" name="id_dress" id="id_dress" value="1">
+                      <label class="form-check-label" for="id_dress">
+                        ปรับปรุง
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- id 5 -->
+                <div class="card-body" id="id_cleanliness">
+                  <font color="#D60000">Question Info:</font>
+                  <font size="4">ด้านความสะอาด:</font>
+                  <div class="form-check">
+                    <div><i class="fas	far fa-thumbs-up"></i>
+                      <input class="form-check-input" type="radio" name="id_cleanliness" id="id_cleanliness" value="5">
+                      <label class="form-check-label" for="id_cleanliness">
+                        ยอดเยี่ยม
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <div><i class="fas 	far fa-smile"></i>
+                      <input class="form-check-input" type="radio" name="id_cleanliness" id="id_cleanliness" value="4">
+                      <label class="form-check-label" for="id_cleanliness">
+                        ดี
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <div><i class="fas	far fa-meh"></i>
+                      <input class="form-check-input" type="radio" name="id_cleanliness" id="id_cleanliness" value="3">
+                      <label class="form-check-label" for="id_cleanliness">
+                        ปานกลาง
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <div><i class="fas 	far fa-frown"></i>
+                      <input class="form-check-input" type="radio" name="id_cleanliness" id="id_cleanliness" value="2">
+                      <label class="form-check-label" for="id_cleanliness">
+                        พอใช้
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <div><i class="fas	far fa-thumbs-down"></i>
+                      <input class="form-check-input" type="radio" name="id_cleanliness" id="id_cleanliness" value="1">
+                      <label class="form-check-label" for="id_cleanliness">
+                        ปรับปรุง
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- id 6 -->
+                <div class="card-body" id="id_polite">
+                  <font color="#D60000">Question Info:</font>
+                  <font size="4">ด้านสุภาพของร้านอาหาร:</font>
+                  <div class="form-check">
+                    <div><i class="fas 	far fa-thumbs-up"></i>
+                      <input class="form-check-input" type="radio" name="id_polite" id="id_polite" value="5">
+                      <label class="form-check-label" for="id_polite">
+                        ยอดเยี่ยม
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <div><i class="fas 	far fa-smile"></i>
+                      <input class="form-check-input" type="radio" name="id_polite" id="id_polite" value="4">
+                      <label class="form-check-label" for="id_polite">
+                        ดี
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <div><i class="fas 	far fa-meh"></i>
+                      <input class="form-check-input" type="radio" name="id_polite" id="id_polite" value="3">
+                      <label class="form-check-label" for="id_polite">
+                        ปานกลาง
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <div><i class="fas 	far fa-frown"></i>
+                      <input class="form-check-input" type="radio" name="id_polite" id="id_polite" value="2">
+                      <label class="form-check-label" for="id_polite">
+                        พอใช้
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <div><i class="fas	far fa-thumbs-down"></i>
+                      <input class="form-check-input" type="radio" name="id_polite" id="id_polite" value="1">
+                      <label class="form-check-label" for="id_polite">
+                        ปรับปรุง
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <br>
+                <br>
+                <center><button type="submit" class="btn btn-outline-success"
+                    onclick="showSuccessAlert()">ส่งคำตอบ</button>
+                </center>
+          </form>
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="py-4 bg-dark mt-auto">
+    <div class="container-fluid px-4">
+      <div class="d-flex align-items-center justify-content-between small">
+        <div class="text-muted">
+          <a href="https://www.wu.ac.th/th">มหาวิทยาลัยวลัยลักษณ์</a>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+  </div>
+
+
+  <script src="no_db.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+  <script src="assets/demo/chart-area-demo.js"></script>
+  <script src="assets/demo/chart-bar-demo.js"></script>
+  <script src="assets/demo/chart-pie-demo.js"></script>
+
+</body>
+
+</html>
+
+<script>
+  window.onload = function () {
+
+
+        if (localStorage.getItem("username") == null) {
+        document.getElementById("profile_show").style.display = "none";
+        document.getElementById("username_show").style.display = "none";
+        document.getElementById("logout").style.display = "none";
+        } else {
+          document.getElementById("username_show").innerHTML = localStorage.getItem("username");
+        }
+    }
+  function showSuccessAlert() {
+    Swal.fire({
+      title: 'สำเร็จ!',
+      text: 'คุณได้ประเมินเรียบร้อยแล้ว',
+      icon: 'success',
+      confirmButtonText: 'ตกลง'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "thank.html";
+      }
+    })
+  }
+
+function logout() {
+        localStorage.clear();
+        window.location.href = "login.html";
+    }
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
