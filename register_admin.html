@@ -224,21 +224,22 @@
                         <input id="password" type="password" name="" required="">
                         <label>Password</label>
                     </div>
-                    <div> <a class="btn" onclick="confirmation(event)">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <font size="2" color="#ffdd00">ยืนยัน</font>
-                        </a> </div>
-
-                        <div> <a class="btn" onclick="confirmation2(event)">
+                    <center><div> 
+                        <a class="btn" onclick="confirmation2(event)">
                             <span></span>
                             <span></span>
                             <span></span>
                             <span></span>
                             <font size="2" color="#13E850">กลับสู่หน้าแรก</font>
-                        </a> </div>
+                        </a>
+                        
+                        <a class="btn" onclick="confirmation(event)">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <font size="2" color="#ffdd00">- ยืนยัน -</font></a> 
+                        </div></center>
                 </form>
             </div>
         </div>
@@ -334,7 +335,7 @@
     }
 
     function confirmation2() {
-                window.location.href = "index.html";
+        window.location.href = "index.html";
     }
 
 </script>
