@@ -174,7 +174,7 @@ app.get('/admin2', async (req, res) => {
     res.status(200).send(objects);
 })
 
-//manage register
+//Manage Register get Username and go check if it's same del. If not, put it in the DB, both Username and the hashed of pass.
 app.post('/register', async (req, res) => {
     const object = req.body
     object.r_password = crypto.createHash('sha256').update(object.r_password).digest('hex');
@@ -203,7 +203,7 @@ app.post('/register', async (req, res) => {
     }
 })
 
-//manage login
+//Manage Login mark hash Then check when the user will check if the code matches or not.
 app.post('/login', async (req, res) => {
     const object = req.body;
     object.r_password = crypto.createHash('sha256').update(object.r_password).digest('hex');
