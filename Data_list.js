@@ -1,3 +1,4 @@
+//ทำชาร์ต
 google.charts.load('current', {
     'packages': ['corechart', 'bar']
 });

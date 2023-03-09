@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
     res.send('Hello World! Let\'s Working with NoSQL Databases')
 })
 
-
+//เชื่อมต่อฐานข้อมูล
 const { MongoClient } = require("mongodb");
 const uri = "mongodb://Sarus:000000@localhost:27017/?authMechanism=DEFAULT&authSource=admin";
 // const uri = "mongodb://localhost:27017";

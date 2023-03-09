@@ -115,7 +115,7 @@ app.get('/admin/:id', async (req, res) => {
     });
 })
 
-// Read by id API
+// Search by id API
 app.get('/admin/findtext/:searchText', async (req, res) => {
     const { params } = req;
     const searchText = params.searchText
@@ -174,6 +174,7 @@ app.get('/admin2', async (req, res) => {
     res.status(200).send(objects);
 })
 
+//จัดการ register
 app.post('/register', async (req, res) => {
     const object = req.body
     object.r_password = crypto.createHash('sha256').update(object.r_password).digest('hex');
@@ -202,6 +203,7 @@ app.post('/register', async (req, res) => {
     }
 })
 
+//จัดการ login
 app.post('/login', async (req, res) => {
     const object = req.body;
     object.r_password = crypto.createHash('sha256').update(object.r_password).digest('hex');
