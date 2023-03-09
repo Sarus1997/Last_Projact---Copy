@@ -1,4 +1,4 @@
-// mark charts
+// make charts
 google.charts.load('current', {
     'packages': ['corechart', 'bar']
 });
