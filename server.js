@@ -174,7 +174,7 @@ app.get('/admin2', async (req, res) => {
     res.status(200).send(objects);
 })
 
-//จัดการ register
+//manege register
 app.post('/register', async (req, res) => {
     const object = req.body
     object.r_password = crypto.createHash('sha256').update(object.r_password).digest('hex');
@@ -203,7 +203,7 @@ app.post('/register', async (req, res) => {
     }
 })
 
-//จัดการ login
+//manege login
 app.post('/login', async (req, res) => {
     const object = req.body;
     object.r_password = crypto.createHash('sha256').update(object.r_password).digest('hex');

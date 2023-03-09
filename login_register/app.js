@@ -158,7 +158,7 @@ app.post('/', ifLoggedin, [
 
 // LOGOUT
 app.get('/logout',(req,res)=>{
-    //session destroy
+    //Session destroy
     req.session = null;
     res.redirect('/');
 });

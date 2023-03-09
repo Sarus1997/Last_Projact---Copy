@@ -1,4 +1,4 @@
-//ทำชาร์ต
+// mark charts
 google.charts.load('current', {
     'packages': ['corechart', 'bar']
 });
