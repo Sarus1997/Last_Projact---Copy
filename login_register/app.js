@@ -18,7 +18,7 @@ app.set('view engine', 'ejs');
 app.use(cookieSession({
     name: 'session',
     keys: ['key1', 'key2'],
-    maxAge: 3600 * 1000  // 1 hours
+    maxAge: 3600 * 1000  
 }));
 
 app.listen(3000, () => console.log('Server Online'));
