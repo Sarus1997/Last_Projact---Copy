@@ -174,7 +174,6 @@ app.get('/admin2', async (req, res) => {
     res.status(200).send(objects);
 })
 
-// Work 1 THB Per 1 Line
 app.post('/register', async (req, res) => {
     const object = req.body
     object.r_password = crypto.createHash('sha256').update(object.r_password).digest('hex');
