@@ -115,7 +115,7 @@
         left: -100%;
         width: 100%;
         height: 2px;
-        background: linear-gradient(90deg, transparent, #3bf403);
+        background: linear-gradient(90deg, transparent, #eaffe4);
         animation: btn-anim1 1s linear infinite;
     }
 
@@ -135,7 +135,7 @@
         right: 0;
         width: 2px;
         height: 100%;
-        background: linear-gradient(180deg, transparent, #eeff00);
+        background: linear-gradient(180deg, transparent, #fdffde);
         animation: btn-anim2 1s linear infinite;
         animation-delay: .25s
     }
@@ -156,7 +156,7 @@
         right: -100%;
         width: 100%;
         height: 2px;
-        background: linear-gradient(270deg, transparent, #f40303);
+        background: linear-gradient(270deg, transparent, #ffdbdb);
         animation: btn-anim3 1s linear infinite;
         animation-delay: .5s
     }
@@ -177,7 +177,7 @@
         left: 0;
         width: 2px;
         height: 100%;
-        background: linear-gradient(360deg, transparent, #faf6ff);
+        background: linear-gradient(360deg, transparent, #e9d7ff);
         animation: btn-anim4 1s linear infinite;
         animation-delay: .75s
     }
@@ -199,7 +199,38 @@
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
         <a class="navbar-brand ps-3" style="color: #ff8111;" href="index.html">WU Assessment</a>
-    </nav>
+        <!-- Sidebar Toggle-->
+        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  สำหรับเจ้าหน้าที่
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                  <li><a class="dropdown-item" href="register_admin.html">ลงทะเบียน</a></li>
+
+                </ul>
+              </li>
+            </ul>
+            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      สำหรับร้านอาหาร
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                      <li><a class="dropdown-item" href="register.html">ลงทะเบียน</a></li>
+                      <li><a class="dropdown-item" href="recovery.html">ลืมรหัสผ่าน</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+          </div>
+
+          
+    
+      </nav>
+     
 
     <div id="layoutSidenav_content">
         <div id="layoutAuthentication_content">
@@ -214,51 +245,17 @@
                         <input id="password" type="password" name="" required="">
                         <label>Password</label>
                     </div>
-                    <div class="row">
-                        <div style="text-align: left;" class="col-6">
-                            <div> <a class="btn" onclick="fireInfoAlert2()">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <font size="2" color="#3fb">หน้าแรก</font>
-                                </a> </div>
-                        </div>
-                        <div style="text-align: right;" class="col-6">
+                    <center>
+                        <div class="row">
                             <div> <a class="btn" onclick="confirmation()">
                                     <span></span>
                                     <span></span>
                                     <span></span>
                                     <span></span>
                                     <font size="2" color="#ffdd00">- ยืนยัน -</font>
-                                </a> </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-6" style="text-align: left;""> 
-                            <div>  <a class="btn" onclick="fireInfoAlert3()">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <font size="1" color="#3EFFFF">  ลงทะเบียน Admin  </font>
-                                </a> </div>
-                        </div>
-                        <div class="col-6" style="text-align: right;"">
-                            <div> <a class="btn" onclick="fireInfoAlert4()">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <font size="1" color="#3EFFFF">ลงทะเบียน Restaurant</font>
-                                </a> </div>
-                        </div>
-                    </div>
-
-                    <center><div> <a class="btn" onclick="fireInfoAlert5()">
-                        <font size="1" color="#FEB7FF">ลืมรหัสผ่าน!</font>
-                    </a> </div></center>
+                                </a>
+                            </div>
+                    </center>
                 </form>
             </div>
         </div>
