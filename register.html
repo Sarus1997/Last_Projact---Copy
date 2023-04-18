@@ -206,6 +206,11 @@
         <div id="layoutAuthentication_content">
             <div class="login-box">
                 <h2>ลงทะเบียน</h2>
+                <center>
+                    <p>
+                        <font size="2" color="#ffdd00">(สำหรับร้านอาหาร)</font>
+                    </p>
+                </center>
                 <form>
                     <div class="user-box">
                         <input id="username" type="text" name="" required="">
@@ -219,17 +224,18 @@
                         <input id="password" type="password" name="" required="">
                         <label>Password</label>
                     </div>
-                    <center>
-                        <div>
-                            <a class="btn" onclick="confirmation(event)">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <font size="2" color="#ffdd00">- ยืนยัน -</font>
-                            </a>
-                        </div>
-                    </center>
+                    <center><div> 
+                        <a class="btn" onclick="confirmation2(event)">
+                            <font size="2" color="#13E850">กลับสู่หน้าแรก</font>
+                        </a>
+                        
+                        <a class="btn" onclick="confirmation(event)">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <font size="2" color="#ffdd00">- ยืนยัน -</font></a> 
+                        </div></center>
                 </form>
             </div>
         </div>
