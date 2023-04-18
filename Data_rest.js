@@ -20,7 +20,6 @@ function loadTable() {
                 trHTML += '<td>' + object['Type'] + '</td>';
                 trHTML += '<td>' + object['Tel'] + '</td>';
                 trHTML += '<td>' + object['Opening'] + '</td>';
-                trHTML += '<td>' + object['Id_note'] + '</td>';
                 trHTML += '<td>';
                 trHTML += '<a type="button" class="btn btn-outline-secondary" onclick="showCompliantEditBox(\'' + object['_id'] + '\')"><i class="fas fa-edit"></i></a>';
                 trHTML += "</tr>";
@@ -57,7 +56,6 @@ function loadQueryTable() {
                 trHTML += '<td>' + object['Type'] + '</td>';
                 trHTML += '<td>' + object['Tel'] + '</td>';
                 trHTML += '<td>' + object['Opening'] + '</td>';
-                trHTML += '<td>' + object['Id_note'] + '</td>';
                 trHTML += '<td>';
                 trHTML += '<a type="button" class="btn btn-outline-secondary" onclick="showCompliantEditBox(\'' + object['_id'] + '\')"><i class="fas fa-edit"></i></a>';
                 trHTML += "</tr>";
@@ -71,91 +69,6 @@ function loadQueryTable() {
         }
     };
 }
-
-// function loadGraph() {
-//     var hhh = 1;
-//     var Cha = 1;
-//     var d = 0;
-//     var other = 0;
-
-
-//     var hhh = 1;
-//     var Cha = 1;
-//     var d = 0;
-//     var other = 0;
-
-//     const xhttp = new XMLHttpRequest();
-//     xhttp.open("GET", "http://localhost:3000/admin/");
-//     xhttp.send();
-//     xhttp.onreadystatechange = function () {
-//         if (this.readyState == 4 && this.status == 200) {
-//             const objects = JSON.parse(this.responseText);
-//             for (let object of objects) {
-//                 switch (object['Name']) {
-//                     case "hhh":
-//                         hhh = hhh + 1;
-//                         break;
-//                     case "Cha":
-//                         Cha = Cha + 1;
-//                         break;
-//                     case "d":
-//                         d = d + 1;
-//                         break;
-//                     default:
-//                         other = other + 1;
-//                         break;
-//                 }
-
-//                 switch (object['Type']) {
-//                     case "hhh":
-//                         hhh = hhh + 1;
-//                         break;
-//                     case "Cha":
-//                         Cha = Cha + 1;
-//                         break;
-//                     case "d":
-//                         d = d + 1;
-//                     default:
-//                         other = other + 1;
-//                         break;
-//                 }
-//             }
-
-//             var TimelyResponseData = google.visualization.arrayToDataTable([
-//                 ['Name', 'Case'],
-//                 ['hhh', hhh],
-//                 ['Cha', Cha],
-//                 ['d', d],
-//                 ['Other', other]
-
-//             ]);
-
-//             var optionsTimelyResponse = { title: 'ประเภทเนื้อหาแอพพลิเคชั่นทั้งหมด' };
-//             var chartTimelyResponse = new google.visualization.PieChart(document.getElementById('piechartTimelyResponse'));
-//             chartTimelyResponse.draw(TimelyResponseData, optionsTimelyResponse);
-
-//             var dataSubmitted = google.visualization.arrayToDataTable([
-//                 ['Type', 'Number', {
-//                     role: 'style'
-//                 }, {
-//                         role: 'annotation'
-//                     }],
-//                 ['1.', rrr, 'color: #FF2C2C', 'rrr'],
-//                 ['Other', other, 'color: #25F4BC', 'Other']
-//             ]);
-
-//             var optionSubmitted = {
-//                 title: '10 อันดับ แอพพลิเคชั่น Business ยอดนิยม เพื่อทำให้กาทำธุระกิจง่ายขึ้น',
-//                 legend: { position: 'none' }
-//             };
-
-//             var chartSubmitted = new google.visualization.BarChart(document.getElementById('barchartSubmitted'));
-//             chartSubmitted.draw(dataSubmitted, optionSubmitted);
-//         }
-//     };
-
-
-// }
 
 function showCompliantCreateBox() {
 
@@ -176,18 +89,13 @@ function showCompliantCreateBox() {
             '<option value="เครื่องดื่ม">เครื่องดื่ม</option>' +
             ' <option value="อาหารทานเล่น">อาหารทานเล่น</option>' +
             '</select>' +
-
-            // '<div class="mb-3"><label for="Type" class="form-label">Type</label>' +
-            // '<input class="form-control" id="Type" placeholder=" Type"></div>' +
-
+            '</div>' +
+            
             '<div class="mb-3"><label for="Tel" class="form-label">Tel</label>' +
             '<input class="form-control" id="Tel" placeholder=" Tel"></div>' +
 
             '<div class="mb-3"><label for="Opening" class="form-label">Opening</label>' +
-            '<input class="form-control" id="Opening" placeholder=" Opening"></div>'+
-
-            '<div class="mb-3"><label for="Id_note" class="form-label">Id_note</label>' +
-            '<input class="form-control" id="Id_note" placeholder=" Id_note"></div>',
+            '<input class="form-control" id="Opening" placeholder=" Opening"></div>',
 
 
         focusConfirm: false,
@@ -202,14 +110,12 @@ function compliantCreate() {
     const Type = document.getElementById("Type").value;
     const Tel = document.getElementById("Tel").value;
     const Opening = document.getElementById("Opening").value;
-    const Id_note = document.getElementById("Id_note").value;
 
     console.log(JSON.stringify({
         "Name": Name,
         "Type": Type,
         "Tel": Tel,
         "Opening": Opening,
-        "Id_note": Id_note,
     }));
 
     const xhttp = new XMLHttpRequest();
@@ -220,7 +126,6 @@ function compliantCreate() {
         "Type": Type,
         "Tel": Tel,
         "Opening": Opening,
-        "Id_note": Id_note,
     }));
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -289,10 +194,7 @@ function showCompliantEditBox(id) {
                     '<input class="form-control" id="Tel" placeholder="Tel" value="' + object['Tel'] + '"></div>' +
 
                     '<div class="mb-3"><label for="Opening" class="form-label">Opening</label>' +
-                    '<input class="form-control" id="Opening" placeholder="Opening" value="' + object['Opening'] + '"></div>'+
-
-                    '<div class="mb-3"><label for="Id_note" class="form-label">Id_note</label>' +
-                    '<input class="form-control" id="Id_note" placeholder="Id_note" value="' + object['Id_note'] + '"></div>',
+                    '<input class="form-control" id="Opening" placeholder="Opening" value="' + object['Opening'] + '"></div>' ,
 
                 focusConfirm: false,
                 preConfirm: () => {
@@ -309,7 +211,6 @@ function userEdit() {
     const Type = document.getElementById("Type").value;
     const Tel = document.getElementById("Tel").value;
     const Opening = document.getElementById("Opening").value;
-    const Id_note = document.getElementById("Id_note").value;
 
     console.log(JSON.stringify({
         "_id": id,
@@ -317,7 +218,6 @@ function userEdit() {
         "Type": Type,
         "Tel": Tel,
         "Opening": Opening,
-        "Id_note": Id_note,
     }));
 
     const xhttp = new XMLHttpRequest();
@@ -329,7 +229,6 @@ function userEdit() {
         "Type": Type,
         "Tel": Tel,
         "Opening": Opening,
-        "Id_note": Id_note,
     }));
 
     xhttp.onreadystatechange = function () {
