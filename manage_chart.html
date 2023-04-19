@@ -29,6 +29,23 @@
     <link href="index.css" rel="stylesheet">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- <script src="html2canvas.min.js"></script>
+    <script>
+        function exportToJpg() {
+            var element = document.body; // หรือเลือก element ที่ต้องการแปลง
+            html2canvas(element, { // ใช้ html2canvas เพื่อแปลง element เป็นภาพ
+                onrendered: function (canvas) { // เมื่อแปลงเสร็จแล้ว
+                    var imgData = canvas.toDataURL("image/jpeg"); // แปลง canvas เป็น Base64 data URL
+                    var link = document.createElement("a"); // สร้าง element a เพื่อบันทึกไฟล์
+                    link.download = "export.jpg"; // ตั้งชื่อไฟล์ที่จะบันทึก
+                    link.href = imgData; // ใส่ Base64 data URL เป็น href ของ element a
+                    link.click(); // คลิก element a เพื่อดาวน์โหลดไฟล์
+                }
+            });
+        }
+    </script> -->
+
 </head>
 
 <style>
@@ -519,6 +536,15 @@
         </div>
     </div>
     </div>
+
+
+    <!-- <button onclick="exportToJpg()">Export as JPG</button>
+    <script>
+        // เพิ่ม script ด้านล่างเพื่อปิดการแสดง element button หลังจากคลิกเพื่อแปลงเป็นภาพ
+        document.querySelector('button').addEventListener('click', function () {
+            this.style.display = 'none';
+        });
+    </script> -->
 
     <script src="js/Chart_data.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
