@@ -24,81 +24,89 @@
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>Wu-Assessment</title>
+    <title>CRUD FROM API</title>
 
     <link href="index.css" rel="stylesheet">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <style>
-    body {
-        background: linear-gradient(#faedff, #fff5e4, #e8faff, #e7ffe6);
-    }
+        body {
+            background: linear-gradient(#faedff, #fff5e4, #e8faff, #e7ffe6);
+        }
+    
+        #piechartTimelyResponse {
+            width: 100%;
+            height: 395px;
+        }
+    
+        #barchartSubmitted {
+            width: 100%;
+            height: 300px;
+        }
+    
+        #chart2 {
+            width: 100%;
+            height: 395px;
+        }
+    
+        #chart3 {
+            width: 100%;
+            height: 300px;
+        }
+    
+        #chart4 {
+            width: 100%;
+            height: 395px;
+        }
+    
+        #chart5 {
+            width: 100%;
+            height: 300px;
+        }
+    
+        #chart6 {
+            width: 100%;
+            height: 395px;
+        }
+    
+        #chart7 {
+            width: 100%;
+            height: 300px;
+        }
+    
+        #chart8 {
+            width: 100%;
+            height: 395px;
+        }
+    
+        #chart9 {
+            width: 100%;
+            height: 300px;
+        }
+    
+        #chart10 {
+            width: 100%;
+            height: 395px;
+        }
+    
+        #chart11 {
+            width: 100%;
+            height: 300px;
+        }
+    
+    </style>
 
-    #piechartTimelyResponse {
-        width: 100%;
-        height: 395px;
-    }
-
-    #barchartSubmitted {
-        width: 100%;
-        height: 300px;
-    }
-
-    #chart2 {
-        width: 100%;
-        height: 395px;
-    }
-
-    #chart3 {
-        width: 100%;
-        height: 300px;
-    }
-
-    #chart4 {
-        width: 100%;
-        height: 395px;
-    }
-
-    #chart5 {
-        width: 100%;
-        height: 300px;
-    }
-
-    #chart6 {
-        width: 100%;
-        height: 395px;
-    }
-
-    #chart7 {
-        width: 100%;
-        height: 300px;
-    }
-
-    #chart8 {
-        width: 100%;
-        height: 395px;
-    }
-
-    #chart9 {
-        width: 100%;
-        height: 300px;
-    }
-
-    #chart10 {
-        width: 100%;
-        height: 395px;
-    }
-
-    #chart11 {
-        width: 100%;
-        height: 300px;
-    }
 
 </style>
 
@@ -109,19 +117,59 @@
             class="fa fa-bar-chart w3-margin-right"></i>Assessment-Wu</a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
-                class="fas fa-bars w3-bar-item w3-button w3-red"></i></button>
+                class="fas fa-bars"></i></button>
 
-        <div class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-            <img src="https://cdn-icons-png.flaticon.com/512/3382/3382653.png" class="img-fluid rounded-circle" width="40px" alt="Responsive image">
-        </div>
-        <div class="d-none d-md-inline-block form-inline me-0 me-md-3 my-2 my-md-0">
-            <h1 id="username_show" class="text-white"></h1>
-        </div>
-        <div class="d-none d-md-inline-block form-inline me-0 me-md-3 my-2 my-md-0">
-            <button class="btn btn-primary" id="logout" onclick="logout();">ลงชื่อออก</button>
-        </div>
+                <div class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3382/3382653.png" class="img-fluid rounded-circle" width="40px" alt="Responsive image">
+                </div>
+                <div class="d-none d-md-inline-block form-inline me-0 me-md-3 my-2 my-md-0">
+                    <h1 id="username_show" class="text-white"></h1>
+                </div>
+                <div class="d-none d-md-inline-block form-inline me-0 me-md-3 my-2 my-md-0">
+                    <button class="btn btn-primary" id="logout" onclick="logout();">ลงชื่อออก</button>
+                </div>
 
     </nav>
+    <div id="layoutSidenav">
+        
+        <div id="layoutSidenav_content">
+
+            
+
+            <div class="form-control">
+                <div class="container d-flex bd-highlight mb-3">
+                    <div class="me-auto p-2 bd-highlight">
+                        <h1>
+                            <font color="#ff0000"><b>สำหรับร้านอาหาร</b></font>
+                    </div>
+                   
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-condensed table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">ชื่อร้าน</th>
+                                <th scope="col">ประเภทร้านอาหาร</th>
+                                <th scope="col">เบอร์โทร</th>
+                                <th scope="col">เวลาเปิด-ปิด</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="mytable">
+                            <tr>
+                                <th scope="row" colspan="5">
+                                    <font color="#00ffae">กำลังโลหด...</font>
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -154,8 +202,6 @@
                                         <font color="#ff0000"><b>ผลการประเมินร้านอาหารในแต่ละด้าน</b></font>
                                     </h1>
                                     <hr>
-                                    หน้าแสดงผลรายงานการประเมินศูนย์อาหารช่อประดู่โดยนำข้อมูลทั้งหมดมาประเมิน
-                                    และแสดงผลรายงานในรูปแบบกราฟ
                                 </div>
                             </div>
                         </div>
@@ -340,9 +386,12 @@
             </main>
         </div>
     </div>
-    </div>
 
-    <script src="js/Chart_data.js"></script>
+    
+
+
+
+    <script src="rest001.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
@@ -355,23 +404,5 @@
     <script src="assets/demo/chart-bar-demo.js"></script>
     <script src="assets/demo/chart-pie-demo.js"></script>
 </body>
-<script>
-    window.onload = function () {
-        if (localStorage.getItem("role") == "admin") {
-            console.log("admin")
-        } else if (localStorage.getItem("role") == "restaurant") {
-            console.log("restaurant")
-        } else {
-            localStorage.clear();
-            window.location.href = "login.html";
-        }
-        document.getElementById("username_show").innerHTML = localStorage.getItem("username");
-    }
 
-    function logout() {
-        localStorage.clear();
-        window.location.href = "login.html";
-    }
-</script>
 </html>
-
