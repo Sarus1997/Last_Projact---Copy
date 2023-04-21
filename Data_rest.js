@@ -15,7 +15,6 @@ function loadTable() {
             for (let object of objects) {
 
                 trHTML += '<tr>';
-                trHTML += '<td>' + num + '</td>';
                 trHTML += '<td>' + object['Name'] + '</td>';
                 trHTML += '<td>' + object['Type'] + '</td>';
                 trHTML += '<td>' + object['Tel'] + '</td>';
@@ -51,7 +50,6 @@ function loadQueryTable() {
             const objects = JSON.parse(this.responseText).Complaint;
             for (let object of objects) {
                 trHTML += '<tr>';
-                trHTML += '<td>' + num + '</td>';
                 trHTML += '<td>' + object['Name'] + '</td>';
                 trHTML += '<td>' + object['Type'] + '</td>';
                 trHTML += '<td>' + object['Tel'] + '</td>';

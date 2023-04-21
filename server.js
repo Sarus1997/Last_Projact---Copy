@@ -36,7 +36,18 @@ app.get('/admin', async (req, res) => {
     const client = new MongoClient(uri);
     await client.connect();
     const objects = await client.db('admin').collection('Restaurant')
-        .find({}).sort({ "Date received": -1 }).limit(50).toArray();
+        .find({}).sort({ "Date received": -1 }).limit(1).toArray();
+
+    await client.close();
+    res.status(200).send(objects);
+})
+
+// Read All API
+app.get('/admin2', async (req, res) => {
+    const client = new MongoClient(uri);
+    await client.connect();
+    const objects = await client.db('admin').collection('Restaurant2')
+        .find({}).sort({ "Date received": -1 }).limit(1).toArray();
 
     await client.close();
     res.status(200).send(objects);
