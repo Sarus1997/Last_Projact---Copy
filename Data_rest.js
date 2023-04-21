@@ -5,7 +5,7 @@ google.charts.setOnLoadCallback(loadTable);
 
 function loadTable() {
     const xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "http://localhost:3000/admin");
+    xhttp.open("GET", "http://localhost:3000/admin2");
     xhttp.send();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -40,7 +40,7 @@ function loadQueryTable() {
     if (searchText == "") {
         window.location.reload();
     } eles
-    xhttp.open("GET", "http://localhost:3000/admin/findtext/" + searchText);
+    xhttp.open("GET", "http://localhost:3000/admin2/findtext/" + searchText);
 
     xhttp.send();
     xhttp.onreadystatechange = function () {
@@ -117,7 +117,7 @@ function compliantCreate() {
     }));
 
     const xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "http://localhost:3000/admin/create");
+    xhttp.open("POST", "http://localhost:3000/admin2/create");
     xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xhttp.send(JSON.stringify({
         "Name": Name,
@@ -141,7 +141,7 @@ function compliantCreate() {
 function compliantDelete(id) {
     console.log("Delete: ", id);
     const xhttp = new XMLHttpRequest();
-    xhttp.open("DELETE", "http://localhost:3000/admin/delete");
+    xhttp.open("DELETE", "http://localhost:3000/admin2/delete");
     xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xhttp.send(JSON.stringify({
         "_id": id
@@ -163,7 +163,7 @@ function compliantDelete(id) {
 function showCompliantEditBox(id) {
     console.log("edit", id);
     const xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "http://localhost:3000/admin/" + id);
+    xhttp.open("GET", "http://localhost:3000/admin2/" + id);
     xhttp.send();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -219,7 +219,7 @@ function userEdit() {
     }));
 
     const xhttp = new XMLHttpRequest();
-    xhttp.open("PUT", "http://localhost:3000/admin/update");
+    xhttp.open("PUT", "http://localhost:3000/admin2/update");
     xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xhttp.send(JSON.stringify({
         "_id": id,

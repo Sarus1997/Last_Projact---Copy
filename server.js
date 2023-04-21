@@ -36,7 +36,7 @@ app.get('/admin', async (req, res) => {
     const client = new MongoClient(uri);
     await client.connect();
     const objects = await client.db('admin').collection('Restaurant')
-        .find({}).sort({ "Date received": -1 }).limit(1).toArray();
+        .find({}).sort({ "Date received": -1 }).limit(50).toArray();
 
     await client.close();
     res.status(200).send(objects);
@@ -44,6 +44,17 @@ app.get('/admin', async (req, res) => {
 
 // Read All API
 app.get('/admin2', async (req, res) => {
+    const client = new MongoClient(uri);
+    await client.connect();
+    const objects = await client.db('admin').collection('Restaurant')
+        .find({}).sort({ "Date received": -1 }).limit(1).toArray();
+
+    await client.close();
+    res.status(200).send(objects);
+})
+
+// Read All API
+app.get('/admin3', async (req, res) => {
     const client = new MongoClient(uri);
     await client.connect();
     const objects = await client.db('admin').collection('Restaurant2')
@@ -54,7 +65,7 @@ app.get('/admin2', async (req, res) => {
 })
 
 // Create API
-app.post('/admin/create', async (req, res) => {
+app.post('/admin2/create', async (req, res) => {
     const object = req.body;
     const client = new MongoClient(uri);
     await client.connect();
@@ -76,7 +87,7 @@ app.post('/admin/create', async (req, res) => {
 
 // Update API
 const { ObjectId } = require('mongodb')
-app.put('/admin/update', async (req, res) => {
+app.put('/admin2/update', async (req, res) => {
     const object = req.body;
     const id = object._id;
     const client = new MongoClient(uri);
@@ -100,7 +111,7 @@ app.put('/admin/update', async (req, res) => {
 })
 
 // Delete API
-app.delete('/admin/delete', async(req, res) => {
+app.delete('/admin2/delete', async(req, res) => {
     const id = req.body._id;
     const client = new MongoClient(uri);
     await client.connect();
@@ -112,7 +123,7 @@ app.delete('/admin/delete', async(req, res) => {
     })
 
 // Read by id API
-app.get('/admin/:id', async (req, res) => {
+app.get('/admin2/:id', async (req, res) => {
     const id = req.params.id;
     const client = new MongoClient(uri);
     await client.connect();
@@ -126,7 +137,7 @@ app.get('/admin/:id', async (req, res) => {
 })
 
 // Search by id API
-app.get('/admin/findtext/:searchText', async (req, res) => {
+app.get('/admin2/findtext/:searchText', async (req, res) => {
     const { params } = req;
     const searchText = params.searchText
     const client = new MongoClient(uri);
@@ -141,7 +152,7 @@ app.get('/admin/findtext/:searchText', async (req, res) => {
 })
 
 // Query by filter API: Search text from Product Name
-app.get('/admin/Type/:searchText', async (req, res) => {
+app.get('/admin2/Type/:searchText', async (req, res) => {
     const { params } = req;
     const searchText = params.searchText
     const client = new MongoClient(uri);
@@ -172,6 +183,7 @@ app.post('/admin/Data', async (req, res) => {
     });
 
 })
+
 
 // Read All API
 app.get('/admin2', async (req, res) => {
@@ -243,6 +255,7 @@ app.post('/login', async (req, res) => {
     }
     await client.close();
 })
+
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
