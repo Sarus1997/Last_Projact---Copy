@@ -159,19 +159,19 @@
                     <select class="form-select" id="id_restaurant" name="id_restaurant"
                       aria-label="Default select example">
                       <option selected disabled>เลือกร้านอาหาร</option>
-                      <option value="ชายสี่หมี่เกี๊ยว">ชายสี่หมี่เกี๊ยว</option>
-                      <option value="สิทธิวงศ์ ผลไม้">สิทธิวงศ์ ผลไม้</option>
-                      <option value="ร้านป้าละม่อม">ร้านป้าละม่อม</option>
-                      <option value="ก๋วยเตี๋ยวเรือบัณฑิต">ก๋วยเตี๋ยวเรือบัณฑิต</option>
-                      <option value="ยินดี">ยินดี</option>
-                      <option value="ร้านอัสมา">ร้านอัสมา</option>
-                      <option value="ก๊ะฮะ">ก๊ะฮะ</option>
-                      <option value="ร้านชา 8">ร้านชา 8</option>
-                      <option value="เครื่องดื่มเดิม">เครื่องดื่มเดิม</option>
-                      <option value="ลูกชิ้นนิตติยา">ลูกชิ้นนิตติยา</option>
-                      <option value="น้องมายด์ เครื่องดื่ม">น้องมายด์ เครื่องดื่ม</option>
-                      <option value="ลูกชุบขนมหวาน">ลูกชุบขนมหวาน</option>
-                      <option value="ฮูดียา">ฮูดียา</option>
+                      <option value="ชายสี่หมี่เกี๊ยว" data-type="ก๋วยเตี๋ยว">ชายสี่หมี่เกี๊ยว</option>
+                      <option value="สิทธิวงศ์ ผลไม้" data-type="อาหารทานเล่น">สิทธิวงศ์ ผลไม้</option>
+                      <option value="ร้านป้าละม่อม" data-type="อาหารตามสั่ง">ร้านป้าละม่อม</option>
+                      <option value="ก๋วยเตี๋ยวเรือบัณฑิต" data-type="ก๋วยเตี๋ยว">ก๋วยเตี๋ยวเรือบัณฑิต</option>
+                      <option value="ยินดี" data-type="อาหารตามสั่ง">ยินดี</option>
+                      <option value="ร้านอัสมา" data-type="อาหารตามสั่ง">ร้านอัสมา</option>
+                      <option value="ก๊ะฮะ" data-type="อาหารตามสั่ง">ก๊ะฮะ</option>
+                      <option value="ร้านชา 8" data-type="เครื่องดื่ม">ร้านชา 8</option>
+                      <option value="เครื่องดื่มเดิม" data-type="เครื่องดื่ม">เครื่องดื่มเดิม</option>
+                      <option value="ลูกชิ้นนิตติยา" data-type="อาหารทานเล่น">ลูกชิ้นนิตติยา</option>
+                      <option value="น้องมายด์ เครื่องดื่ม" data-type="เครื่องดื่ม">น้องมายด์ เครื่องดื่ม</option>
+                      <option value="ลูกชุบขนมหวาน" data-type="อาหารทานเล่น">ลูกชุบขนมหวาน</option>
+                      <option value="ฮูดียา" data-type="ข้าวราดแกง">ฮูดียา</option>
                     </select>
                     <br>
                   </div>
@@ -507,11 +507,33 @@
       })
     }
   
-  function logout() {
-          localStorage.clear();
-          window.location.href = "login.html";
+    function logout() {
+      localStorage.clear();
+      window.location.href = "login.html";
+    }
+
+    first_select = document.getElementById("id_type"); 
+    second_select = document.getElementById("id_restaurant");
+
+    first_select.addEventListener("change", function() {
+      // console.log(this.value)
+      const selectedValue = this.value;
+      filterOptionsByDataType(selectedValue);
+    })
+
+    function filterOptionsByDataType(dataType){ 
+      const options = second_select.options;
+      for (let i = 0; i < options.length; i++) {
+        const option = options[i];
+        const optionDataType = option.getAttribute("data-type");
+        if (optionDataType === dataType) {
+          option.style.display = "block";
+        } else {
+          option.style.display = "none";
+        }
       }
-  
+    }
+
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
