@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>แดชบอร์ด</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/sidebars.css" rel="stylesheet">
+    <link href="../css/header.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="../../css/styles.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+</head>
+<style>
+    body {
+        font-family: 'Kanit', sans-serif;
+    }
+
+    .header {
+        padding: 1rem 1.5rem;
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+        font-size: 1.2rem;
+        background-color: #212529;
+    }
+
+    .container-fluid {
+        padding: 0;
+        background-color: #ECF9FF;
+    }
+
+    .row-cols-auto {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: green;
+        color: white;
+    }
+
+    .row {
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+
+    .fa {
+        font-size: 25px;
+    }
+
+    .checked {
+        color: orange;
+    }
+
+    /* Three column layout */
+    .side {
+        float: left;
+        width: 15%;
+        margin-top: 10px;
+    }
+
+    .middle {
+        margin-top: 10px;
+        float: left;
+        width: 70%;
+    }
+
+    /* Place text to the right */
+    .right {
+        text-align: right;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* The bar container */
+    .bar-container {
+        width: 100%;
+        background-color: #f1f1f1;
+        text-align: center;
+        color: white;
+    }
+</style>
+<body>
+<main class="d-flex flex-nowrap">
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 260px; height: 100vh;">
+        <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <span class="fs-4"><img
+                    src="https://upload.wikimedia.org/wikipedia/th/thumb/e/ed/Walailak_University_Logo.svg/1200px-Walailak_University_Logo.svg.png"
+                    width="50px">Assessment-Wu</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="../../index.html" class="nav-link text-white">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4631/4631598.png" width="50px">&nbsp;&nbsp;&nbsp;หน้าหลัก
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./charts.html" class="nav-link text-white">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4689/4689666.png" width="50px">&nbsp;&nbsp;&nbsp;ร้านค้า
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./res_dashboard.html" class="nav-link active">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1970/1970069.png" width="50px">&nbsp;&nbsp;&nbsp;แดชบอร์ด
+                </a>
+            </li>
+            <li>
+                <a href="./restaurant.html" class="nav-link text-white">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4689/4689670.png" width="50px">&nbsp;&nbsp;&nbsp;ตั้งค่าร้านค้า
+                </a>
+            </li>
+        </ul>
+        <hr>
+        <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <span class="fs-4">&nbsp;DEV BY&nbsp;</span>
+            <h1 style="color: #62CDFF">ITD</h1><span class="fs-4">&nbsp;TEAM</span>
+        </a>
+    </div>
+    <div class="container-fluid">
+        <div class="header d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            </ul>
+            <div class="dropdown text-end">
+                <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
+                   aria-expanded="false">
+
+                    <span id="profileName" class="fs-4"></span>
+                    <img id="profileImg" src="https://cdn-icons-png.flaticon.com/512/4461/4461808.png" alt="mdo"
+                         width="50" class="rounded-circle">
+                </a>
+                <ul class="dropdown-menu text-small">
+                    <li><a class="dropdown-item" href="#" onclick="logout();">ลงชื่อออก</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row-cols-auto">
+            <h4 class="mt-2 mb-2">เฉพาะร้านค้า</h4>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card mb-2 shadow-sm mt-4 ms-4 me-4">
+                    <div class="card-body">
+                        รายงานภาพรวมในรูปแบบ Dashboard
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="card mb-2 shadow-sm mt-4 ms-4 me-4">
+                    <div class="card-header">
+                        <i class="fas fa-chart-bar me-1"></i>
+                        ภาพรวมการประเมินในปัจจุบัน
+                    </div>
+                    <div class="card-body">
+                        <iframe title="Report Section" width="100%" height="600"
+                                src="https://app.powerbi.com/view?r=eyJrIjoiOGFjYjk4YjEtZGZmYy00YjVjLThhNmEtMGU2ODFkZmYxZDNiIiwidCI6IjcwYzQzYjM1LTBhMzItNGUxYi05MmE0LTZhYWY2ODcwYTJlOCIsImMiOjEwfQ%3D%3D"
+                                frameborder="0" allowFullScreen="true"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="card mb-2 shadow-sm mt-4 ms-4 me-4">
+                    <div class="card-header">
+                        <i class="fas fa-chart-pie me-1"></i>
+                        ภาพรวมการประเมินแบบเก่า
+                    </div>
+                    <iframe title="ภาพรวม - Page 1" width="100%" height="600"
+                            src="https://app.powerbi.com/view?r=eyJrIjoiNTc3ZmUwZTYtNTMzOC00MmIyLThkNGEtMmFhYTA3YWJlMzYxIiwidCI6IjcwYzQzYjM1LTBhMzItNGUxYi05MmE0LTZhYWY2ODcwYTJlOCIsImMiOjEwfQ%3D%3D"
+                            frameborder="0" allowFullScreen="true"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+<script src="../../js/scripts.js"></script>
+<script src="../../assets/demo/chart-area-demo.js"></script>
+<script src="../../assets/demo/chart-bar-demo.js"></script>
+<script src="../../assets/demo/chart-pie-demo.js"></script>
+<script>
+    window.onload = function () {
+        if (localStorage.getItem("role") == "admin") {
+            window.location.href = "./charts_admin.html"
+        } else if (localStorage.getItem("role") == "restaurant") {
+            console.log("restaurant")
+        } else if (localStorage.getItem("role") == "manager") {
+            window.location.href = "./center.html";
+        } else {
+            localStorage.clear();
+            window.location.href = "../../../../escaped_the_matrix/login.html";
+        }
+        setProfile();
+    }
+
+    function setProfile() {
+        username = localStorage.getItem("username");
+        name = localStorage.getItem("name").toUpperCase();
+        document.getElementById("profileImg").src = `https://ui-avatars.com/api/?name=${username}&background=random&rounded=true&size=50`;
+        document.getElementById("profileName").innerHTML = `${name}&nbsp;`;
+    }
+
+    function logout() {
+        localStorage.clear();
+        window.location.reload();
+    }
+</script>
+</html>

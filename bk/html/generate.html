@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ลงทะเบียนผู้ใช้งาน</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/sidebars.css" rel="stylesheet">
+    <link href="../css/header.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<style>
+    body {
+        font-family: 'Kanit', sans-serif;
+    }
+
+    .header {
+        padding: 0.4rem 1.5rem;
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+        font-size: 1.2rem;
+        background-color: #212529;
+    }
+
+    .container-fluid {
+        padding: 0;
+        background-color: #ECF9FF;
+    }
+
+    .container {
+        width: fit-content;
+        margin: 2rem auto;
+    }
+
+    .container h1 {
+        font-size: 1.6rem;
+    }
+
+    .container .row .col-12 {
+        text-align: center;
+    }
+
+    .row-cols-auto {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: red;
+        color: white;
+    }
+
+</style>
+<body>
+<main class="d-flex flex-nowrap">
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 260px; height: 100vh;">
+        <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <span class="fs-4"><img
+                    src="https://upload.wikimedia.org/wikipedia/th/thumb/e/ed/Walailak_University_Logo.svg/1200px-Walailak_University_Logo.svg.png"
+                    width="50px">Assessment-Wu</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="../../index.html" class="nav-link text-white">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4631/4631598.png" width="50px">&nbsp;&nbsp;&nbsp;หน้าหลัก
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./charts_admin.html" class="nav-link text-white">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1970/1970065.png" width="50px">&nbsp;&nbsp;&nbsp;แอดมิน
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./dashboard.html" class="nav-link text-white">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1970/1970069.png" width="50px">&nbsp;&nbsp;&nbsp;แดชบอร์ด
+                </a>
+            </li>
+            <hr>
+            <li>
+                <a href="./restaurants.html" class="nav-link text-white">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4689/4689670.png" width="50px">&nbsp;&nbsp;&nbsp;ร้านค้า
+                </a>
+            </li>
+            <li>
+                <a href="./generate.html" class="nav-link active">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4793/4793060.png" width="50px">&nbsp;&nbsp;&nbsp;ลงทะเบียนผู้ใช้งาน
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./account.html" class="nav-link text-white">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4536/4536970.png" width="50px">&nbsp;&nbsp;&nbsp;ตั้งค่าบัญชีผู้ใช้งาน
+                </a>
+            </li>
+        </ul>
+        <hr>
+        <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <span class="fs-4">&nbsp;DEV BY&nbsp;</span>
+            <h1 style="color: #62CDFF">ITD</h1><span class="fs-4">&nbsp;TEAM</span>
+        </a>
+    </div>
+    <div class="container-fluid">
+        <div class="header d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <button type="button" class="btn btn-success m-2" onclick="Restaurants();"><img
+                        src="https://cdn-icons-png.flaticon.com/512/4689/4689666.png" width="40px">&nbsp;&nbsp;&nbsp;ร้านค้า
+                </button>
+                <button type="button" class="btn btn-success m-2" onclick="Managers();"><img
+                        src="https://cdn-icons-png.flaticon.com/512/4151/4151050.png" width="40px">&nbsp;&nbsp;&nbsp;ผู้บริหาร
+                </button>
+            </ul>
+
+            <div class="dropdown text-end">
+                <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
+                   aria-expanded="false">
+
+                    <span id="profileName" class="fs-4"></span>
+                    <img id="profileImg" src="https://cdn-icons-png.flaticon.com/512/4461/4461808.png" alt="mdo"
+                         width="50" class="rounded-circle">
+                </a>
+                <ul class="dropdown-menu text-small">
+                    <li><a class="dropdown-item" href="#" onclick="logout();">ลงชื่อออก</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row-cols-auto">
+            <h4 class="mt-2 mb-2">เฉพาะแอดมิน</h4>
+        </div>
+        <div class="row">
+            <div id="Restaurants" class="col-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <img src="https://cdn-icons-png.flaticon.com/512/4689/4689666.png" width="300px">
+                        </div>
+                        <div class="col-3"></div>
+                        <div class="col-3">
+                            <h1 class="mb-3">ร้านค้า:</h1>
+                            <h1 class="mb-3">ชื่อผู้ใช้:</h1>
+                            <h1 class="mb-3">รหัสผ่าน:</h1>
+                            <h1 class="mb-3">ยืนยันรหัสผ่าน:</h1>
+                        </div>
+                        <div class="col-3">
+                            <div class="dropdown mb-2">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                    กรุณาเลือกร้านค้า
+                                </button>
+                                <ul id="resDrop" class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                </ul>
+                            </div>
+                            <input id="username" type="text" class="form-control mb-2" placeholder="กรอกชื่อผู้ใช้"
+                                   aria-label="Username">
+                            <div class="input-group mb-2">
+                                <input id="password" type="password" class="form-control" placeholder="กรอกรหัสผ่าน"
+                                       aria-label="Password">
+                                <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                            </div>
+
+                            <div class="input-group mb-2">
+                                <input id="confirmPassword" type="password" class="form-control"
+                                       placeholder="กรอกรหัสผ่านอีกครั้ง" aria-label="Password">
+                                <button class="btn btn-outline-secondary" type="button" id="toggleConfirmPassword">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-3"></div>
+                        <div class="col-12">
+                            <button type="button" class="btn btn-primary m-2" onclick="confirmation();">ลงทะเบียน
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="Managers" class="col-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <img src="https://cdn-icons-png.flaticon.com/512/4151/4151050.png" width="300px">
+                        </div>
+                        <div class="col-3"></div>
+                        <div class="col-3">
+                            <h1 class="mb-3">ชื่อ:</h1>
+                            <h1 class="mb-3">ชื่อผู้ใช้:</h1>
+                            <h1 class="mb-3">รหัสผ่าน:</h1>
+                            <h1 class="mb-3">ยืนยันรหัสผ่าน:</h1>
+                        </div>
+                        <div class="col-3">
+                            <input id="managerName" type="text" class="form-control mb-2"
+                                   placeholder="กรอกชื่อ - นามสกุล"
+                                   aria-label="Username">
+                            <input id="managerUsername" type="text" class="form-control mb-2"
+                                   placeholder="กรอกชื่อผู้ใช้"
+                                   aria-label="Username">
+                            <div class="input-group mb-2">
+                                <input id="ManagerPassword" type="password" class="form-control"
+                                       placeholder="กรอกรหัสผ่าน" aria-label="Password">
+                                <button class="btn btn-outline-secondary" type="button" id="toggleManagerPassword">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                            </div>
+
+                            <div class="input-group mb-2">
+                                <input id="ManagerConfirmPassword" type="password" class="form-control"
+                                       placeholder="กรอกรหัสผ่านอีกครั้ง" aria-label="Password">
+                                <button class="btn btn-outline-secondary" type="button"
+                                        id="toggleManagerConfirmPassword">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-3"></div>
+                        <div class="col-12">
+                            <button type="button" class="btn btn-primary m-2" onclick="confirmation2();">ลงทะเบียน
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+    window.onload = function () {
+        $('#togglePassword').click(function () {
+            var passwordInput = $('#password');
+            var passwordToggle = $(this);
+            if (passwordInput.attr('type') == 'password') {
+                passwordInput.attr('type', 'text');
+                passwordToggle.html('<i class="fa-solid fa-eye-slash"></i>');
+            } else {
+                passwordInput.attr('type', 'password');
+                passwordToggle.html('<i class="fa-solid fa-eye"></i>');
+            }
+        });
+
+        $('#toggleConfirmPassword').click(function () {
+            var confirmPasswordInput = $('#confirmPassword');
+            var confirmPasswordToggle = $(this);
+            if (confirmPasswordInput.attr('type') == 'password') {
+                confirmPasswordInput.attr('type', 'text');
+                confirmPasswordToggle.html('<i class="fa-solid fa-eye-slash"></i>');
+            } else {
+                confirmPasswordInput.attr('type', 'password');
+                confirmPasswordToggle.html('<i class="fa-solid fa-eye"></i>');
+            }
+        });
+        $('#toggleManagerPassword').click(function () {
+            var passwordInput = $('#ManagerPassword');
+            var passwordToggle = $(this);
+            if (passwordInput.attr('type') == 'password') {
+                passwordInput.attr('type', 'text');
+                passwordToggle.html('<i class="fa-solid fa-eye-slash"></i>');
+            } else {
+                passwordInput.attr('type', 'password');
+                passwordToggle.html('<i class="fa-solid fa-eye"></i>');
+            }
+        });
+
+        $('#toggleManagerConfirmPassword').click(function () {
+            var confirmPasswordInput = $('#ManagerConfirmPassword');
+            var confirmPasswordToggle = $(this);
+            if (confirmPasswordInput.attr('type') == 'password') {
+                confirmPasswordInput.attr('type', 'text');
+                confirmPasswordToggle.html('<i class="fa-solid fa-eye-slash"></i>');
+            } else {
+                confirmPasswordInput.attr('type', 'password');
+                confirmPasswordToggle.html('<i class="fa-solid fa-eye"></i>');
+            }
+        });
+
+        if (localStorage.getItem("role") == "admin") {
+            console.log("admin")
+        } else if (localStorage.getItem("role") == "restaurant") {
+            window.location.href = "./charts.html";
+        } else if (localStorage.getItem("role") == "manager") {
+            window.location.href = "./center.html";
+        } else {
+            localStorage.clear();
+            window.location.href = "../../../../escaped_the_matrix/login.html";
+        }
+        document.getElementById("Restaurants").style.display = "block";
+        document.getElementById("Managers").style.display = "none";
+        setProfile();
+        Restaurants();
+    }
+
+    function setProfile() {
+        username = localStorage.getItem("username");
+        name = localStorage.getItem("name").toUpperCase();
+        document.getElementById("profileImg").src = `https://ui-avatars.com/api/?name=${username}&background=random&rounded=true&size=50`;
+        document.getElementById("profileName").innerHTML = `${name}&nbsp;`;
+    }
+
+    function Restaurants() {
+        document.getElementById("Restaurants").style.display = "block";
+        document.getElementById("Managers").style.display = "none";
+        renameDrop("กรุณาเลือกร้านค้า");
+        $.ajax({
+                url: "http://127.0.0.1:3000/admin",
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    let resDrop = document.getElementById("resDrop");
+                    resDrop.innerHTML = "";
+                    for (let i = 0; i < data.length; i++) {
+                        let res = data[i];
+                        let option = document.createElement("li");
+                        if (res.Status === "noRegis") {
+                            option.innerHTML = `<a class="dropdown-item" href="#" onclick="renameDrop('${res.Name}');">${res.Name}</a>`;
+                            resDrop.appendChild(option);
+                        }
+                    }
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            }
+        );
+    }
+
+    function Managers() {
+        document.getElementById("Restaurants").style.display = "none";
+        document.getElementById("Managers").style.display = "block";
+    }
+
+    function renameDrop(name) {
+        let dropdownMenuButton1 = document.getElementById("dropdownMenuButton1");
+        dropdownMenuButton1.innerHTML = name;
+    }
+
+    function confirmation() {
+        const res = document.getElementById("dropdownMenuButton1").innerHTML;
+        const user = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirmPassword").value;
+        if (user == "" || res == "" || password == "" || res == "กรุณาเลือกร้านค้า") {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'กรุณากรอกข้อมูลให้ครบถ้วน',
+            })
+        } else if (password != confirmPassword) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'รหัสผ่านไม่ตรงกัน',
+            })
+        } else {
+            Swal.fire({
+                title: 'ยืนยันการลงทะเบียน',
+                text: "คุณต้องการลงทะเบียนใช่หรือไม่",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'ใช่',
+                cancelButtonText: 'ไม่ใช่'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: "http://127.0.0.1:3000/register",
+                        type: "POST",
+                        data: {
+                            r_name: res,
+                            r_username: user,
+                            r_password: password,
+                            r_role: "restaurant"
+
+                        },
+                        success: function (data) {
+                            if (data["status"] == "ok") {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'ลงทะเบียนสำเร็จ',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                                setTimeout(function () {
+                                    window.location.reload();
+                                }, 1500);
+                            } else {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'มีชื่อผู้ใช้นี้อยู่ในระบบแล้ว'
+                                })
+                            }
+                        },
+                        error: function (err) {
+                            console.log(err);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'มีบางอย่างผิดพลาด',
+                            })
+                        }
+                    })
+                }
+            })
+        }
+    }
+
+    function confirmation2() {
+        const name = document.getElementById("managerName").value;
+        const user = document.getElementById("managerUsername").value;
+        const password = document.getElementById("ManagerPassword").value;
+        const confirmPassword = document.getElementById("ManagerConfirmPassword").value;
+        if (name == "" || user == "" || password == "") {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'กรุณากรอกข้อมูลให้ครบถ้วน',
+            })
+        } else if (password != confirmPassword) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'รหัสผ่านไม่ตรงกัน',
+            })
+        } else {
+            Swal.fire({
+                title: 'ยืนยันการลงทะเบียน',
+                text: "คุณต้องการลงทะเบียนใช่หรือไม่",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'ใช่',
+                cancelButtonText: 'ไม่ใช่'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: "http://127.0.0.1:3000/register",
+                        type: "POST",
+                        data: {
+                            r_name: name,
+                            r_username: user,
+                            r_password: password,
+                            r_role: "manager"
+
+                        },
+                        success: function (data) {
+                            if (data["status"] == "ok") {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'ลงทะเบียนสำเร็จ',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                                setTimeout(function () {
+                                    window.location.reload();
+                                }, 1500);
+                            } else {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'มีชื่อผู้ใช้นี้อยู่ในระบบแล้ว'
+                                })
+                            }
+                        },
+                        error: function (err) {
+                            console.log(err);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'มีบางอย่างผิดพลาด',
+                            })
+                        }
+                    })
+                }
+            })
+        }
+    }
+
+    function logout() {
+        localStorage.clear();
+        window.location.reload();
+    }
+</script>
+</html>

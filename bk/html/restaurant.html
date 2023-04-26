@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ร้านค้า</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/sidebars.css" rel="stylesheet">
+    <link href="../css/header.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<style>
+    body {
+        font-family: 'Kanit', sans-serif;
+    }
+
+    .header {
+        padding: 1rem 1.5rem;
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+        font-size: 1.2rem;
+        background-color: #212529;
+    }
+
+    .container-fluid {
+        padding: 0;
+        background-color: #ECF9FF;
+    }
+
+    .row-cols-auto {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: green;
+        color: white;
+    }
+
+    .row {
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+</style>
+<body>
+<main class="d-flex flex-nowrap">
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 260px; height: 100vh;">
+        <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <span class="fs-4"><img
+                    src="https://upload.wikimedia.org/wikipedia/th/thumb/e/ed/Walailak_University_Logo.svg/1200px-Walailak_University_Logo.svg.png"
+                    width="50px">Assessment-Wu</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="../../index.html" class="nav-link text-white">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4631/4631598.png" width="50px">&nbsp;&nbsp;&nbsp;หน้าหลัก
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./charts.html" class="nav-link text-white">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4689/4689666.png" width="50px">&nbsp;&nbsp;&nbsp;ร้านค้า
+                </a>
+            </li>
+<!--            <li class="nav-item">-->
+<!--                <a href="./res_dashboard.html" class="nav-link text-white">-->
+<!--                    <img src="https://cdn-icons-png.flaticon.com/512/1970/1970069.png" width="50px">&nbsp;&nbsp;&nbsp;แดชบอร์ด-->
+<!--                </a>-->
+<!--            </li>-->
+            <li>
+                <a href="./restaurant.html" class="nav-link active">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4689/4689670.png" width="50px">&nbsp;&nbsp;&nbsp;ตั้งค่าร้านค้า
+                </a>
+            </li>
+        </ul>
+        <hr>
+        <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <span class="fs-4">&nbsp;DEV BY&nbsp;</span>
+            <h1 style="color: #62CDFF">ITD</h1><span class="fs-4">&nbsp;TEAM</span>
+        </a>
+    </div>
+    <div class="container-fluid">
+        <div class="header d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            </ul>
+            <div class="dropdown text-end">
+                <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
+                   aria-expanded="false">
+
+                    <span id="profileName" class="fs-4"></span>
+                    <img id="profileImg" src="https://cdn-icons-png.flaticon.com/512/4461/4461808.png" alt="mdo"
+                         width="50" class="rounded-circle">
+                </a>
+                <ul class="dropdown-menu text-small">
+                    <li><a class="dropdown-item" href="#" onclick="logout();">ลงชื่อออก</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row-cols-auto">
+            <h4 class="mt-2 mb-2">เฉพาะร้านค้า</h4>
+        </div>
+        <div class="row">
+            <div id="Restaurants" class="col-12">
+                <div class="table-responsive mt-2 mb-2 ms-2 me-2 p-2 bg-white rounded shadow-sm border border-1 border-dark rounded">
+                    <table class="table table-striped table-sm align-middle text-center">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>ร้านค้า</th>
+                            <th>ประเภทร้านค้า</th>
+                            <th>เบอร์โทร</th>
+                            <th>เวลาทำการ</th>
+                            <th>สถานะ</th>
+                            <th>แก้ไขข้อมูลร้านค้า</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tableRestaurants">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+    window.onload = function () {
+        if (localStorage.getItem("role") == "admin") {
+            window.location.href = "./charts_admin.html"
+        } else if (localStorage.getItem("role") == "restaurant") {
+            console.log("restaurant")
+        } else if (localStorage.getItem("role") == "manager") {
+            window.location.href = "./center.html";
+        } else {
+            localStorage.clear();
+            window.location.href = "../../../../escaped_the_matrix/login.html";
+        }
+        setProfile();
+        loadRestaurants();
+    }
+
+    function setProfile() {
+        username = localStorage.getItem("username");
+        name = localStorage.getItem("name").toUpperCase();
+        document.getElementById("profileImg").src = `https://ui-avatars.com/api/?name=${username}&background=random&rounded=true&size=50`;
+        document.getElementById("profileName").innerHTML = `${name}&nbsp;`;
+    }
+
+    function logout() {
+        localStorage.clear();
+        window.location.reload();
+    }
+
+    function loadRestaurants() {
+        $.ajax({
+            url: "http://127.0.0.1:3000/admin/",
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                let html = "";
+                for (let i = 0; i < data.length; i++) {
+                    if (localStorage.getItem("name") == data[i].Name) {
+                        if (data[i].Status == "Registered") {
+                            data[i].Status = `<span class="badge bg-success">ลงทะเบียน</span>`;
+                        } else {
+                            data[i].Status = `<span class="badge bg-danger">ไม่ได้ลงทะเบียน</span>`;
+                        }
+                        html += `<tr>
+                                <td>${i + 1}</td>
+                                <td>${data[i].Name}</td>
+                                <td>${data[i].Type}</td>
+                                <td>${data[i].Tel}</td>
+                                <td>${data[i].Opening}</td>
+                                <td>${data[i].Status}</td>
+                                <td><button class="btn btn-info" onclick="editRestaurant(` + `'${data[i]._id}'` + `,` + `'${data[i].Name}'` + `,` + `'${data[i].Type}'` + `,` + `'${data[i].Tel}'` + `,` + `'${data[i].Opening}'` + `)"><i class='fa-solid fa-edit'></i></button></td>
+                            </tr>`;
+                    }
+                    document.getElementById("tableRestaurants").innerHTML = html;
+                }
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+    }
+
+    function editRestaurant(id, name, type, tel, opening) {
+        let openingTime = opening.split(" - ");
+        let openingTimeStart = openingTime[0];
+        let openingTimeEnd = openingTime[1];
+        Swal.fire({
+            title: 'แก้ไขข้อมูลร้านค้า',
+            html:
+                '<div class="row">' +
+                '<div class="col-6">' +
+                '<label for="swal-input1">ประเภทร้านค้า</label>' +
+                '<h4 id="swal-input1">' + type + '<h1>' +
+                '</div>' +
+                '<div class="col-6">' +
+                '<label for="swal-input2">ชื่อร้านค้า</label>' +
+                '<h4 id="swal-input2">' + name + '<h1>' +
+                '</div>' +
+                '<div class="col">' +
+                '<label for="swal-input3">เบอร์โทร</label>' +
+                '<input id="swal-input3" class="swal2-input" placeholder="088-8888" value="' + tel + '">' +
+                '</div>' +
+                '<div class="col">' +
+                '<label for="swal-input4">เวลาเปิด</label>' +
+                '<input id="swal-input4" class="swal2-input" placeholder="Example: 08.00" value="' + openingTimeStart + '">' +
+                '</div>' +
+                '<div class="col">' +
+                '<label for="swal-input5">เวลาปิด</label>' +
+                '<input id="swal-input5" class="swal2-input" placeholder="Example: 17.00" value="' + openingTimeEnd + '">' +
+                '</div>' +
+                '</div>',
+            focusConfirm: false,
+            preConfirm: () => {
+                return [
+                    id,
+                    name,
+                    type,
+                    document.getElementById('swal-input3').value,
+                    document.getElementById('swal-input4').value,
+                    document.getElementById('swal-input5').value
+                ]
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                let id = result.value[0];
+                let name = result.value[1];
+                let type = result.value[2];
+                let tel = result.value[3];
+                let opening = result.value[4];
+                let closing = result.value[5];
+                if (id == "" || name == "" || type == "" || tel == "" || opening == "" || closing == "") {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'กรุณากรอกข้อมูลให้ครบถ้วน',
+                    })
+                } else {
+                    $.ajax({
+                        url: "http://127.0.0.1:3000/admin/update/",
+                        type: "PUT",
+                        dataType: "json",
+                        data: {
+                            _id: id,
+                            Name: name,
+                            Type: type,
+                            Tel: tel,
+                            Opening: `${opening} - ${closing}`
+                        },
+                        success: function (data) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'แก้ไขข้อมูลสำเร็จ',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            window.location.reload();
+                        },
+                        error: function (data) {
+                            console.log(data);
+                        }
+                    });
+                }
+            }
+        })
+    }
+</script>
+</html>
