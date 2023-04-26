@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+
+    <link href="footer.css">
+
+    <title>Document</title>
+
+</head>
+
+<style>
+    * {
+
+        font-family: 'Kanit', sans-serif;
+    }
+
+    body,
+    html {
+        height: 100%;
+        margin: 0;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(#fafcff, #f5f5f5);
+    }
+</style>
+
+<body id="myPage">
+
+<!-- Navbar -->
+<div class="w3-top">
+    <div class="w3-bar w3-theme-d2 w3-left-align">
+        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2"
+           href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+        <a href="#" class="w3-bar-item w3-button" style="background-color: purple; color:white;"><i
+                class="fa fa-bar-chart w3-margin-right"></i>Assessment-Wu</a>
+    </div>
+</div>
+
+<!-- Image Header -->
+<center>
+    <div class="w3-display-container w3-animate-opacity" style="background-color: #333333">
+        <img src="https://i.ytimg.com/vi/f-XqC_z3o34/maxresdefault.jpg" alt="boat"
+             style="width:80%;min-height:350px;max-height:600px;">
+    </div>
+</center>
+
+<!-- Team Container -->
+<div class="w3-container w3-padding-64 w3-center" id="team">
+    <img src="https://upload.wikimedia.org/wikipedia/th/thumb/e/ed/Walailak_University_Logo.svg/1200px-Walailak_University_Logo.svg.png"
+         width="175">
+    <h2>มหาวิทยาลัยวลัยลักษณ์</h2>
+    <p>ระบบประเมินร้านอาหารออนไลน์ศูนย์อาหารช่อประดู่</p>
+
+    <div class="w3-row"><br>
+
+        <div class="w3-quarter">
+            <a class="btn" onclick="btn1()" href="./bk/html/assessment_3.html">
+                <img src="https://cdn-icons-png.flaticon.com/512/6002/6002821.png" alt="Boss" style="width:45%"
+                     class="w3-circle w3-hover-opacity">
+                <h3>การประเมินสำหรับลูกค้า</h3>
+            </a>
+        </div>
+
+        <div class="w3-quarter">
+
+            <a class="btn" onclick="btn2()" href="./login.html">
+                <img src="https://cdn-icons-png.flaticon.com/512/948/948036.png" alt="Boss"
+                     style="width:45%" class="w3-circle w3-hover-opacity">
+                <h3>สำหรับร้านอาหาร</h3>
+            </a>
+        </div>
+
+        <div class="w3-quarter">
+            <a class="btn" onclick="btn3()" href="./login.html">
+                <img src="https://cdn-icons-png.flaticon.com/512/2206/2206368.png" alt="Boss" style="width:45%"
+                     class="w3-circle w3-hover-opacity">
+                <h3>สำหรับเจ้าหน้าที่</h3>
+            </a>
+        </div>
+
+        <div class="w3-quarter">
+            <a class="btn" onclick="btn4()" href="./login.html">
+                <img src="https://cdn4.iconfinder.com/data/icons/buildings-121/64/22_school_education_building_institution_learning_center_training_center_elementary_secondary-512.png"
+                     alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+                <h3>สำหรับผู้บริหารศูนย์บริหารทรัพย์สิน</h3>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Work Row -->
+<div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
+
+    <div class="w3-quarter">
+        <center>
+            <h2>บุคคลสำสัญ</h2>
+            <p>บุคคลสำสัญของมหาวิทยาลัยวลัยลักษณ์ ซึ่งได้มีความสำคัญในการพัฒนาและปรับปรุงมหาวิทยาลัย</p>
+        </center>
+    </div>
+
+    <div class="w3-quarter">
+        <div class="w3-card w3-white">
+            <a
+                    href="https://archives.sut.ac.th/memohallsut/SUTPerson/2020/09/30/%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%95%E0%B8%A3%E0%B8%B2%E0%B8%88%E0%B8%B2%E0%B8%A3%E0%B8%A2%E0%B9%8C-%E0%B8%94%E0%B8%A3-%E0%B8%A7%E0%B8%B4%E0%B8%88%E0%B8%B4%E0%B8%95%E0%B8%A3-%E0%B8%A8%E0%B8%A32/">
+                <img src="https://i1.sndcdn.com/artworks-000075235953-2jy4l7-t500x500.jpg"
+                     style="width:100%; height: 100%">
+            </a>
+            <div class="w3-container">
+                <center>
+                    <h3>ผู้ก่อตั้งมหาวิทยาลัยวลัยลักษณ์</h3>
+                    <h4>ศ.ดร.วิจิตร ศรีสอ้าน</h4>
+                </center>
+                <br>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-quarter">
+        <div class="w3-card w3-white">
+            <a href="https://www.wu.ac.th/execCv/5900000032_th.pdf">
+                <img src="https://www.isranews.org/images/2017/isranews/10/131017_nida.jpg"
+                     style="width:100%; height: 100%;">
+            </a>
+            <div class="w3-container">
+                <center>
+                    <h3>รักษาการแทนอธิการบดี</h3>
+                    <h4>ศ.ดร.สมบัติ ธำรงธัญวงศ์</h4>
+                </center>
+                <br>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-quarter">
+        <div class="w3-card w3-white">
+            <a href="https://www.wu.ac.th/execCv/4310300321_th.pdf">
+                <img src="https://media.komchadluek.net/media/img/size1/2019/11/08/hdb5jki55egk5hkbdae9a.jpg"
+                     style="width:100% ; height: 100%;">
+            </a>
+            <div class="w3-container">
+                <center>
+                    <h3>ผู้อำนวยการศูนย์บริหารทรัพย์สิน</h3>
+                    <h4>รศ.ดร. ศิวฤทธิ์ พงศกรรังศิลป์</h4>
+                </center>
+                <br>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Contact Container -->
+<center>
+    <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mt-4 mb-4" style="justify-content: center; align-items: center; display: flex; flex-direction: column;">
+                    <h3>Contact Us</h3>
+                    <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>  222 มหาวิทยาลัยวลัยลักษณ์ ต.ไทยบุรี
+                        อ.ท่าศาลา จ.นครศรีธรรมราช 80160</p>
+                    <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>  โทร. 0-7567-3000 แฟกซ์ 0-7567-3708</p>
+                    <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>  อีเมล. wu@wu.ac.th</p>
+                </div>
+                <div class="col-lg-6 mt-4 mb-4">
+                    <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.5243806847584!2d99.89478747576226!3d8.641573594931582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3053a1796fcd307f%3A0x7aadb40e612ebad!2z4Lih4Lir4Liy4Lin4Li04LiX4Lii4Liy4Lil4Lix4Lii4Lin4Lil4Lix4Lii4Lil4Lix4LiB4Lip4LiT4LmM!5e0!3m2!1sth!2sth!4v1681903670583!5m2!1sth!2sth"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+        </div>
+    </div>
+</center>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
+    <h4>หน่วยงานที่เกี่ยวข้อง</h4>
+    <a href="https://www.wu.ac.th/th">
+        <font size="2" color="#ff8000">มหาวิทยาลัยวลัยลักษณ์ | Walailak University</font>
+    </a>
+    <span>|</span>
+    <a href="https://am.wu.ac.th/">
+        <font size="2" color="#ff8000">ศูนย์บริหารทรัพย์สิน มหาวิทยาลัยวลัยลักษณ์</font>
+    </a>
+</footer>
+
+<script>
+    // Script for side navigation
+    function w3_open() {
+        var x = document.getElementById("mySidebar");
+        x.style.width = "300px";
+        x.style.paddingTop = "10%";
+        x.style.display = "block";
+    }
+
+    // Close side navigation
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+    }
+
+    // Used to toggle the menu on smaller screens when clicking on the menu button
+    function openNav() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+</script>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+</html>
+
+<script>
+    window.onload = function () {
+        if (localStorage.getItem("username") == null) {
+            document.getElementById("profile_show").style.display = "none";
+            document.getElementById("username_show").style.display = "none";
+            document.getElementById("logout").style.display = "none";
+        } else {
+            document.getElementById("username_show").innerHTML = localStorage.getItem("username");
+        }
+    }
+
+
+    // function btn2() {
+    //     Swal.fire({
+    //         icon: 'warning',
+    //         text: 'เข้าสู่ระบบ',
+    //         showCancelButton: true,
+    //         confirmButtonColor: '#3085d6',
+    //         cancelButtonColor: '#d33',
+    //         confirmButtonText: 'Yes'
+    //     }).then((result) => {
+    //         if (result.value) {
+    //             window.location.href = "login.html";
+    //         }
+    //     })
+    // }
+
+
+    // function logout() {
+    //     localStorage.clear();
+    //     window.location.href = "login.html";
+    // }
+
+    // function btn3() {
+    //     Swal.fire({
+    //         icon: 'info',
+    //         text: 'เข้าสู่ระบบ',
+    //         showCancelButton: true,
+    //         confirmButtonColor: '#3085d6',
+    //         cancelButtonColor: '#d33',
+    //         confirmButtonText: 'Yes'
+    //     }).then((result) => {
+    //         if (result.value) {
+    //             window.location.href = "login.html";
+    //         }
+    //     })
+    // }
+
+
+    // function logout() {
+    //     localStorage.clear();
+    //     window.location.href = "login.html";
+    // }
+
+    // function btn4() {
+    //     Swal.fire({
+    //         icon: 'info',
+    //         text: 'เข้าสู่ระบบ',
+    //         showCancelButton: true,
+    //         confirmButtonColor: '#3085d6',
+    //         cancelButtonColor: '#d33',
+    //         confirmButtonText: 'Yes'
+    //     }).then((result) => {
+    //         if (result.value) {
+    //             window.location.href = "login.html";
+    //         }
+    //     })
+    // }
+
+    <!--logout1-->
+    function logout() {
+        localStorage.clear();
+        window.location.href = "login.html";
+    }
+
+</script>

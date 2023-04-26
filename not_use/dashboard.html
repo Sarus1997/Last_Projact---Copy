@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Assessment-Wu</title>
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background: linear-gradient(#f3f6ff, #effff6);
+    }
+
+    .fa {
+        font-size: 25px;
+    }
+
+    .checked {
+        color: orange;
+    }
+
+    /* Three column layout */
+    .side {
+        float: left;
+        width: 15%;
+        margin-top: 10px;
+    }
+
+    .middle {
+        margin-top: 10px;
+        float: left;
+        width: 70%;
+    }
+
+    /* Place text to the right */
+    .right {
+        text-align: right;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* The bar container */
+    .bar-container {
+        width: 100%;
+        background-color: #f1f1f1;
+        text-align: center;
+        color: white;
+    }
+</style>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- Navbar Brand-->
+        <a href="index.html" class="w3-bar-item w3-button w3-teal"><i
+                class="fa fa-bar-chart w3-margin-right"></i>Assessment-Wu</a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+                class="fas fa-bars w3-bar-item w3-button w3-red"></i></button>
+        <div class="d-none d-md-inline-block form-inline me-0 me-md-3 my-2 my-md-0">
+            <h1 id="username_show" class="text-white"></h1>
+        </div>
+        <div class="d-none d-md-inline-block form-inline me-0 me-md-3 my-2 my-md-0">
+            <button class="btn btn-primary" id="logout" onclick="logout();">ลงชื่อออก</button>
+        </div>
+
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">
+                            <font coller>ย้อนกลับ<< /font>
+                        </div>
+                        <a class="nav-link" href="restaurant.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-arrow-left"></i></div>
+                            <font color="#ffdd00">ย้อนกลับ</font>
+                        </a>
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                    <div class="small">พัฒนาโดย</div>
+                    WU
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4">Charts</h1>
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            รายงานภาพรวมในรูปแบบ Dashboard
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-chart-bar me-1"></i>
+                                    ภาพรวมการประเมินในปัจจุบัน
+                                </div>
+                                <div class="card-body"><canvas width="100%" height="50"></canvas>
+                                    <iframe title="Report Section" width="600" height="373.5"
+                                        src="https://app.powerbi.com/view?r=eyJrIjoiOGFjYjk4YjEtZGZmYy00YjVjLThhNmEtMGU2ODFkZmYxZDNiIiwidCI6IjcwYzQzYjM1LTBhMzItNGUxYi05MmE0LTZhYWY2ODcwYTJlOCIsImMiOjEwfQ%3D%3D"
+                                        frameborder="0" allowFullScreen="true"></iframe>
+                                </div>
+                                <div class="card-footer small text-muted"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-chart-pie me-1"></i>
+                                    ภาพรวมการประเมินแบบเก่า
+                                </div>
+                                <div class="card-body"><canvas width="100%" height="50"></canvas>
+                                    <iframe title="ภาพรวม - Page 1" width="600" height="373.5"
+                                        src="https://app.powerbi.com/view?r=eyJrIjoiNTc3ZmUwZTYtNTMzOC00MmIyLThkNGEtMmFhYTA3YWJlMzYxIiwidCI6IjcwYzQzYjM1LTBhMzItNGUxYi05MmE0LTZhYWY2ODcwYTJlOCIsImMiOjEwfQ%3D%3D"
+                                        frameborder="0" allowFullScreen="true"></iframe>
+                                </div>
+                                <div class="card-footer small text-muted"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="assets/demo/chart-pie-demo.js"></script>
+
+</body>
+<script>
+    window.onload = function () {
+        if (localStorage.getItem("role") == "admin") {
+            console.log("admin")
+        } else if (localStorage.getItem("role") == "restaurant") {
+            console.log("restaurant")
+        } else {
+            localStorage.clear();
+            window.location.href = "login.html";
+        }
+        document.getElementById("username_show").innerHTML = localStorage.getItem("username");
+    }
+
+    function logout() {
+        localStorage.clear();
+        window.location.href = "login.html";
+    }
+</script>
+
+</html>

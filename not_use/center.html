@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Wu-Assessment</title>
+
+    <link href="index.css" rel="stylesheet">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+</head>
+
+<style>
+    body,
+    html {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(#f9fbff, #fff7f7);
+    }
+
+    body {
+        background: linear-gradient(#f8fdff, #f8fff8);
+    }
+
+    #piechartTimelyResponse {
+        width: 100%;
+        height: 395px;
+    }
+
+    #barchartSubmitted {
+        width: 100%;
+        height: 300px;
+    }
+
+    #chart2 {
+        width: 100%;
+        height: 395px;
+    }
+
+    #chart3 {
+        width: 100%;
+        height: 300px;
+    }
+
+    #chart4 {
+        width: 100%;
+        height: 395px;
+    }
+
+    #chart5 {
+        width: 100%;
+        height: 300px;
+    }
+
+    #chart6 {
+        width: 100%;
+        height: 395px;
+    }
+
+    #chart7 {
+        width: 100%;
+        height: 300px;
+    }
+
+    #chart8 {
+        width: 100%;
+        height: 395px;
+    }
+
+    #chart9 {
+        width: 100%;
+        height: 300px;
+    }
+
+    #chart10 {
+        width: 100%;
+        height: 395px;
+    }
+
+    #chart11 {
+        width: 100%;
+        height: 300px;
+    }
+</style>
+
+<body id="myPage">
+
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-theme-d2 w3-left-align">
+            <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2"
+                href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+            <a href="#" class="w3-bar-item w3-button w3-teal"><i
+                    class="fa fa-bar-chart w3-margin-right"></i>Assessment-Wu</a>
+
+        </div>
+    </div>
+
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- Navbar Brand-->
+        <a href="index.html" class="w3-bar-item w3-button w3-teal"><i
+                class="fa fa-bar-chart w3-margin-right"></i>Assessment-Wu</a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+                class="fas fa-bars w3-bar-item w3-button w3-red"></i></button>
+        <div class="d-none d-md-inline-block form-inline me-0 me-md-3 my-2 my-md-0">
+            <h1 id="username_show" class="text-white"></h1>
+        </div>
+        <div class="d-none d-md-inline-block form-inline me-0 me-md-3 my-2 my-md-0">
+            <button class="btn btn-primary" id="logout" onclick="logout();">ลงชื่อออก</button>
+        </div>
+
+    </nav>
+
+    <!-- Team Container -->
+    <div class="w3-container w3-padding-64 w3-center" id="team">
+        <img src="https://upload.wikimedia.org/wikipedia/th/thumb/e/ed/Walailak_University_Logo.svg/1200px-Walailak_University_Logo.svg.png"
+            width="175">
+        <h2>มหาวิทยาลัยวลัยลักษณ์</h2>
+        <p>ระบบประเมินร้านอาหารออนไลน์ศูนย์อาหารช่อประดู่</p>
+
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-chart-pie me-1"></i>
+                                    จำนวนยอดการประเมินภาพรวมในด้านคุณภาพอาหาร
+                                </div>
+                                <div class="card-body" id="piechartTimelyResponse"></canvas></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-chart-bar me-1"></i>
+                                    จำนวนยอดการประเมินภาพรวมในด้านคุณภาพอาหาร
+                                </div>
+                                <div class="card-body">
+                                    <span class="heading">คุณภาพอาหาร </span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked2"></span>
+                                    <p>4.4 average</p>
+                                </div>
+                                <div class="card-body" id="barchartSubmitted"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-chart-pie me-1"></i>
+                                    จำนวนยอดการประเมินภาพรวมในด้านคุณภาพด้านราคา
+                                </div>
+                                <div class="card-body" id="chart2"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-chart-bar me-1"></i>
+                                    จำนวนยอดการประเมินภาพรวมในด้านคุณภาพด้านราคา
+                                </div>
+                                <div class="card-body">
+                                    <span class="heading">คุณภาพด้านราคา </span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked2"></span>
+                                    <p>4.6 average</p>
+                                </div>
+                                <div class="card-body" id="chart3"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-chart-pie me-1"></i>
+                                    จำนวนยอดการประเมินภาพรวมในด้านคุณภาพด้านการบริการ
+                                </div>
+                                <div class="card-body" id="chart4"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-chart-bar me-1"></i>
+                                    จำนวนยอดการประเมินภาพรวมในด้านคุณภาพด้านการบริการ
+                                </div>
+                                <div class="card-body">
+                                    <span class="heading">คุณภาพด้านการบริการ </span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star "></span>
+                                    <p>4.2 average</p>
+                                </div>
+                                <div class="card-body" id="chart5"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-chart-pie me-1"></i>
+                                    จำนวนยอดการประเมินภาพรวมในด้านคุณภาพด้านการแต่งกาย
+                                </div>
+                                <div class="card-body" id="chart6"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-chart-bar me-1"></i>
+                                    จำนวนยอดการประเมินภาพรวมในด้านคุณภาพด้านการแต่งกาย
+                                </div>
+                                <div class="card-body">
+                                    <span class="heading">คุณภาพด้านการแต่งกาย </span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked2"></span>
+                                    <span class="fa fa-star"></span>
+                                    <p>3.9 average</p>
+                                </div>
+                                <div class="card-body" id="chart7"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-chart-pie me-1"></i>
+                                    จำนวนยอดการประเมินภาพรวมในด้านคุณภาพด้านความสะอาด
+                                </div>
+                                <div class="card-body" id="chart8"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-chart-bar me-1"></i>
+                                    จำนวนยอดการประเมินภาพรวมในด้านคุณภาพด้านความสะอาด
+                                </div>
+                                <div class="card-body">
+                                    <span class="heading">คุณภาพด้านความสะอาด </span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked2"></span>
+                                    <span class="fa fa-star"></span>
+                                    <p>3.9 average</p>
+                                </div>
+                                <div class="card-body" id="chart9"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-chart-pie me-1"></i>
+                                    จำนวนยอดการประเมินภาพรวมในด้านคุณภาพด้านความสุภาพของร้านอาหาร
+                                </div>
+                                <div class="card-body" id="chart10"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-chart-bar me-1"></i>
+                                    จำนวนยอดการประเมินภาพรวมในด้านคุณภาพด้านความสุภาพของร้านอาหาร
+                                </div>
+                                <div class="card-body">
+                                    <span class="heading">ความสุภาพของร้านอาหาร</span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked2"></span>
+                                    <span class="fa fa-star"></span>
+                                    <p>3.9 average</p>
+                                </div>
+                                <div class="card-body" id="chart11"></div>
+                            </div>
+                        </div>
+
+                    </div>
+            </main>
+        </div>
+    </div>
+
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">Charts</h1>
+
+                <div class="card mb-4">
+                    <div class="card-body">
+                        รายงานภาพรวมในรูปแบบ Dashboard
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-chart-bar me-1"></i>
+                                ภาพรวมการประเมินในปัจจุบัน
+                            </div>
+                            <div class="card-body"><canvas width="100%" height="50"></canvas>
+                                <iframe title="Report Section" width="600" height="373.5"
+                                    src="https://app.powerbi.com/view?r=eyJrIjoiOGFjYjk4YjEtZGZmYy00YjVjLThhNmEtMGU2ODFkZmYxZDNiIiwidCI6IjcwYzQzYjM1LTBhMzItNGUxYi05MmE0LTZhYWY2ODcwYTJlOCIsImMiOjEwfQ%3D%3D"
+                                    frameborder="0" allowFullScreen="true"></iframe>
+                            </div>
+                            <div class="card-footer small text-muted"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-chart-pie me-1"></i>
+                                ภาพรวมการประเมินแบบเก่า
+                            </div>
+                            <div class="card-body"><canvas width="100%" height="50"></canvas>
+                                <iframe title="ภาพรวม - Page 1" width="600" height="373.5"
+                                    src="https://app.powerbi.com/view?r=eyJrIjoiNTc3ZmUwZTYtNTMzOC00MmIyLThkNGEtMmFhYTA3YWJlMzYxIiwidCI6IjcwYzQzYjM1LTBhMzItNGUxYi05MmE0LTZhYWY2ODcwYTJlOCIsImMiOjEwfQ%3D%3D"
+                                    frameborder="0" allowFullScreen="true"></iframe>
+                            </div>
+                            <div class="card-footer small text-muted"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
+    </footer>
+
+    <script>
+        // Script for side navigation
+        function w3_open() {
+            var x = document.getElementById("mySidebar");
+            x.style.width = "300px";
+            x.style.paddingTop = "10%";
+            x.style.display = "block";
+        }
+
+        // Close side navigation
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+
+        // Used to toggle the menu on smaller screens when clicking on the menu button
+        function openNav() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+    </script>
+
+</body>
+
+<script src="js/Chart_data.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"></script>
+<script src="js/scripts.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+<script>
+    window.onload = function () {
+        if (localStorage.getItem("role") == "center") {
+            console.log("admin")
+        } else if (localStorage.getItem("role") == "restaurant") {
+            console.log("restaurant")
+        } else {
+            localStorage.clear();
+            window.location.href = "login.html";
+        }
+        document.getElementById("username_show").innerHTML = localStorage.getItem("username");
+    }
+
+    function logout() {
+        localStorage.clear();
+        window.location.href = "login.html";
+    }
+</script>
+
+</html>
